@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
 import { LuMapPin, LuPhone, LuMail, LuUsers, LuAward, LuBookOpen, LuCalendar, LuArrowRight, LuExternalLink, LuStar, LuTarget } from 'react-icons/lu';
-import SAKHeader from '../../components/layout/SAKHeader';
-const SAKFooter = lazy(() => import('../../components/layout/SAKFooter'));
+import SAKHeader from '../components/layout/SAKHeader';
+const SAKFooter = lazy(() => import('../components/layout/SAKFooter'));
 
 const SAKGHSBujuuko = () => {
   const brandColors = {
@@ -22,19 +22,19 @@ const SAKGHSBujuuko = () => {
       title: 'Sciences Program',
       description: 'Comprehensive science education covering Physics, Chemistry, Biology, and Mathematics',
       subjects: ['Physics', 'Chemistry', 'Biology', 'Mathematics', 'ICT'],
-      image: '/images/science.avif',
+      image: '/science.avif',
     },
     {
       title: 'Arts Program',
       description: 'Liberal arts education focusing on languages, humanities, and social sciences',
       subjects: ['Literature', 'History', 'Geography', 'Economics', 'Languages'],
-      image: '/images/ARTS.jpg',
+      image: '/ARTS.jpg',
     },
     {
       title: 'Technical Program',
       description: 'Practical skills development in technical and vocational subjects',
       subjects: ['Technical Drawing', 'Computer Science', 'Agriculture', 'Business Studies'],
-      image: '/images/TD.jpg',
+      image: '/TD.jpg',
     }
   ], []);
 
@@ -51,7 +51,7 @@ const SAKGHSBujuuko = () => {
         linkEl.setAttribute('rel', rel);
         document.head.appendChild(linkEl);
       }
-      linkEl.setAttribute('href', '/images/Gombe High logo.png');
+      linkEl.setAttribute('href', '/Gombe High logo.png');
       return { linkEl, prevHref };
     };
 
@@ -72,7 +72,7 @@ const SAKGHSBujuuko = () => {
       <section id="home" className="relative overflow-hidden text-white py-32" style={{ backgroundColor: brandColors.secondary }}>
         <div className="absolute inset-0">
           <img 
-            src="/images/raissa-lara-lutolf-fasel-ivKWcUFJQtE-unsplash.jpg" 
+            src="/raissa-lara-lutolf-fasel-ivKWcUFJQtE-unsplash.jpg" 
             alt="St. Andrew Kaggwa Gombe High School - Bujuuko" 
             className="w-full h-full object-cover opacity-20"
             loading="lazy"
@@ -86,7 +86,7 @@ const SAKGHSBujuuko = () => {
           >
             <div className="flex justify-center mb-8">
               <div className="h-[21rem] w-[21rem] flex items-center justify-center overflow-hidden">
-                <img src="/images/Gombe High logo.png" alt="St. Andrew Kaggwa Gombe HS" className="h-full w-full object-contain" loading="lazy" />
+                <img src="/Gombe High logo.png" alt="St. Andrew Kaggwa Gombe HS" className="h-full w-full object-contain" loading="lazy" />
               </div>
             </div>
             <div className="inline-flex items-center rounded-full px-6 py-2 mb-6" style={{ backgroundColor: `${brandColors.primary}40` }}>

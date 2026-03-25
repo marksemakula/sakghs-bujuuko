@@ -31,12 +31,12 @@ const navItems: NavItem[] = [
   {
     label: 'About Us',
     items: [
-      { label: 'School Profile',                     href: '#school-profile' },
-      { label: 'Mission and Vision',                 href: '#mission-vision' },
-      { label: 'Core Values',                        href: '#core-values' },
-      { label: 'Board of Governors',                 href: '#board-of-governors' },
-      { label: "Principal's Message",                href: '#principals-message' },
-      { label: 'Administration and Management Team', href: '#administration' },
+      { label: 'School Profile',                    href: '#school-profile' },
+      { label: 'Mission and Vision',                href: '#mission-vision' },
+      { label: 'Core Values',                       href: '#core-values' },
+      { label: 'Board of Governors',                href: '#board-of-governors' },
+      { label: "Principal's Message",               href: '#principals-message' },
+      { label: 'Administration and Management Team',href: '#administration' },
     ],
   },
   {
@@ -72,10 +72,10 @@ const navItems: NavItem[] = [
    Stats
    ───────────────────────────── */
 const stats: Stat[] = [
-  { icon: LuUsers,    label: 'Students Enrolled',    sublabel: 'Active Learners',     numeric: 480, suffix: '+' },
-  { icon: LuAward,    label: 'UACE Pass Rate',        sublabel: 'National Excellence', numeric: 95,  suffix: '%' },
-  { icon: LuBookOpen, label: 'Subjects Offered',      sublabel: 'Broad Curriculum',    numeric: 18,  suffix: '+' },
-  { icon: LuTarget,   label: 'University Admissions', sublabel: 'Class of 2024',       numeric: 91,  suffix: '%' },
+  { icon: LuUsers,    label: 'Students Enrolled',    sublabel: 'Active Learners',     numeric: 550, suffix: '+' },
+  { icon: LuAward,    label: 'UACE Pass Rate',        sublabel: 'National Excellence', numeric: 97,  suffix: '%' },
+  { icon: LuBookOpen, label: 'Subjects Offered',      sublabel: 'Broad Curriculum',    numeric: 20,  suffix: '+' },
+  { icon: LuTarget,   label: 'University Admissions', sublabel: 'Class of 2024',       numeric: 94,  suffix: '%' },
 ];
 
 /* ─────────────────────────────
@@ -86,32 +86,32 @@ const programs: Program[] = [
     id: 'sciences', category: 'sciences',
     title: 'Sciences Program', icon: LuMicroscope,
     description: 'Rigorous science curriculum covering Physics, Chemistry, Biology, and Mathematics — preparing students for medicine, engineering and technology.',
-    subjects: ['Physics', 'Chemistry', 'Biology', 'Mathematics', 'ICT', 'Sub-Maths'],
-    images: ['/science.avif', '/GHS_school/emmanuel-ikwuegbu-MUyq5MiVE2w-unsplash.jpg', '/GHS_school/rohan-reddy-MhQxeXhE-GI-unsplash.jpg'],
+    subjects: ['Physics','Chemistry','Biology','Mathematics','ICT','Sub-Maths'],
+    images: ['/images/science.avif','/GHS_school/emmanuel-ikwuegbu-MUyq5MiVE2w-unsplash.jpg','/GHS_school/rohan-reddy-MhQxeXhE-GI-unsplash.jpg'],
     color: 'from-[#800E13] to-[#5C0A0F]',
   },
   {
     id: 'arts', category: 'arts',
     title: 'Arts Program', icon: LuPalette,
     description: 'Broad liberal arts education in languages, humanities and social sciences — building critical thinking, communication and cultural literacy.',
-    subjects: ['Literature in English', 'History', 'Geography', 'Economics', 'Languages', 'Divinity'],
-    images: ['/uni2.avif', '/GHS_school/trnava-university-SwCMZwrhQm8-unsplash.jpg', '/GHS_school/juma-mndeme-SQde0xURhG8-unsplash.jpg'],
+    subjects: ['Literature in English','History','Geography','Economics','Languages','Divinity'],
+    images: ['/images/uni2.avif','/GHS_school/trnava-university-SwCMZwrhQm8-unsplash.jpg','/GHS_school/juma-mndeme-SQde0xURhG8-unsplash.jpg'],
     color: 'from-amber-700 to-yellow-700',
   },
   {
     id: 'technical', category: 'technical',
     title: 'Technical Program', icon: LuCpu,
     description: 'Hands-on development in technical and vocational subjects, equipping students with practical competencies for industry and enterprise.',
-    subjects: ['Technical Drawing', 'Computer Science', 'Agriculture', 'Business Studies', 'Entrepreneurship'],
-    images: ['/TD.avif', '/ICT/premium_photo-1683134015825-74717a7b344b.avif', '/GHS_school/marco-fileccia-HE7_hMkqn9A-unsplash.jpg'],
+    subjects: ['Technical Drawing','Computer Science','Agriculture','Business Studies','Entrepreneurship'],
+    images: ['/images/TD.avif','/ICT/premium_photo-1683134015825-74717a7b344b.avif','/GHS_school/marco-fileccia-HE7_hMkqn9A-unsplash.jpg'],
     color: 'from-slate-700 to-gray-800',
   },
   {
     id: 'business', category: 'business',
     title: 'Business Studies', icon: LuBriefcase,
     description: 'Develop entrepreneurial thinking and business acumen through practical economics, accounting and commerce — the foundation for tomorrow\'s leaders.',
-    subjects: ['Economics', 'Accounting', 'Commerce', 'Entrepreneurship', 'Business Management'],
-    images: ['/premium_photo-1713890429200-e725c894ab95.avif', '/GHS_school/oscar-omondi-u9BPnG0ADsU-unsplash.jpg', '/uni2.avif'],
+    subjects: ['Economics','Accounting','Commerce','Entrepreneurship','Business Management'],
+    images: ['/images/premium_photo-1713890429200-e725c894ab95.avif','/GHS_school/oscar-omondi-u9BPnG0ADsU-unsplash.jpg','/images/uni2.avif'],
     color: 'from-emerald-700 to-teal-700',
   },
 ];
@@ -130,11 +130,11 @@ const admissionSteps: AdmissionStep[] = [
    Partners
    ───────────────────────────── */
 const rawPartners: Partner[] = [
-  { name: 'Gombe Education Service', logo: '/GES.png' },
-  { name: 'Ministry of Education',   logo: '/MoES.png' },
-  { name: 'Buganda Kingdom',         logo: '/Flag_of_Buganda.svg' },
-  { name: 'Uganda Tourism Board',    logo: '/UTB.png' },
-  { name: 'Java House',              logo: '/java-house.avif' },
+  { name: 'Gombe Education Service', logo: '/images/GES.png' },
+  { name: 'Ministry of Education',   logo: '/images/MoES.png' },
+  { name: 'Buganda Kingdom',         logo: '/images/Flag_of_Buganda.svg' },
+  { name: 'Uganda Tourism Board',    logo: '/images/UTB.png' },
+  { name: 'Java House',              logo: '/images/java-house.avif' },
 ];
 const partners: Partner[] = [...rawPartners, ...rawPartners];
 
@@ -142,10 +142,10 @@ const partners: Partner[] = [...rawPartners, ...rawPartners];
    Animated counter
    ───────────────────────────── */
 const Counter: React.FC<{ target: number; suffix: string }> = ({ target, suffix }) => {
-  const ref       = useRef<HTMLSpanElement>(null);
-  const inView    = useInView(ref, { once: true, margin: '-60px' });
+  const ref      = useRef<HTMLSpanElement>(null);
+  const inView   = useInView(ref, { once: true, margin: '-60px' });
   const motionVal = useMotionValue(0);
-  const spring    = useSpring(motionVal, { damping: 40, stiffness: 200 });
+  const spring   = useSpring(motionVal, { damping: 40, stiffness: 200 });
 
   useEffect(() => {
     if (!inView) return;
@@ -204,25 +204,26 @@ const InlineHeader: React.FC<{ onApply: () => void }> = ({ onApply }) => {
             <div className={`h-11 w-11 flex items-center justify-center overflow-hidden rounded-full border-2 transition-colors ${
               scrolled ? 'border-[#800E13]/30 group-hover:border-[#800E13]' : 'border-[#FFD700]/30 group-hover:border-[#FFD700]'
             }`}>
-              <img src="/Gombe High logo.png" alt="SAKGHS" className="h-full w-full object-contain" loading="eager" />
+              <img src="/images/Gombe High logo.png" alt="SAKGHS" className="h-full w-full object-contain" loading="eager" />
             </div>
             <div className="leading-tight">
               <div className={`text-sm lg:text-base font-bold transition-colors ${scrolled ? 'text-gray-900' : 'text-white'}`}>
                 St. Andrew Kaggwa Gombe HS
               </div>
               <div className={`text-xs font-semibold tracking-wider transition-colors ${scrolled ? 'text-[#800E13]' : 'text-[#FFD700]'}`}>
-                EXCELLENCE &amp; CHARACTER · SINCE 2003
+                EXCELLENCE &amp; CHARACTER · SINCE 1995
               </div>
             </div>
           </a>
 
-          {/* Desktop nav */}
+          {/* Desktop */}
           <div className="hidden lg:flex items-center gap-1">
             <a href="#home" className={`px-3 py-2 text-sm font-medium transition-colors rounded-lg ${scrolled ? 'text-gray-700 hover:text-[#800E13] hover:bg-gray-50' : 'text-white hover:text-[#FFD700]'}`}>Home</a>
             {navItems.map((item) => (
               <div key={item.label} className="relative"
                 onMouseEnter={() => setOpenDropdown(item.label)}
-                onMouseLeave={() => setOpenDropdown(null)}>
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
                 <button className={`flex items-center px-3 py-2 text-sm font-medium transition-colors rounded-lg ${scrolled ? 'text-gray-700 hover:text-[#800E13] hover:bg-gray-50' : 'text-white hover:text-[#FFD700]'}`}>
                   {item.label}
                   <LuChevronDown className={`w-3.5 h-3.5 ml-1 transition-transform duration-200 ${openDropdown === item.label ? 'rotate-180' : ''}`} />
@@ -322,10 +323,10 @@ const InlineHeader: React.FC<{ onApply: () => void }> = ({ onApply }) => {
 /* ═══════════════════════════════
    MAIN PAGE
    ═══════════════════════════════ */
-const SAKGHSBujuuko: React.FC = () => {
-  const [activeTab,     setActiveTab]     = useState<string>('all');
-  const [isApplyOpen,   setIsApplyOpen]   = useState(false);
-  const [programImages, setProgramImages] = useState<Record<number, number>>(() =>
+const SAKGHSKawaala: React.FC = () => {
+  const [activeTab,        setActiveTab]        = useState<string>('all');
+  const [isApplyOpen,      setIsApplyOpen]      = useState(false);
+  const [programImages,    setProgramImages]    = useState<Record<number,number>>(() =>
     Object.fromEntries(programs.map((_, i) => [i, 0]))
   );
   const [formData, setFormData] = useState({
@@ -334,7 +335,7 @@ const SAKGHSBujuuko: React.FC = () => {
 
   /* Cycle program card images */
   useEffect(() => {
-    const timeouts: ReturnType<typeof setTimeout>[]   = [];
+    const timeouts: ReturnType<typeof setTimeout>[]  = [];
     const intervals: ReturnType<typeof setInterval>[] = [];
     programs.forEach((prog, i) => {
       const t = setTimeout(() => {
@@ -348,10 +349,10 @@ const SAKGHSBujuuko: React.FC = () => {
     return () => { timeouts.forEach(clearTimeout); intervals.forEach(clearInterval); };
   }, []);
 
-  /* Page title */
+  /* Title & favicon */
   useEffect(() => {
     const prev = document.title;
-    document.title = 'St. Andrew Kaggwa Gombe HS \u2013 Bujuuko';
+    document.title = 'St. Andrew Kaggwa Gombe HS \u2013 Kawaala';
     return () => { document.title = prev; };
   }, []);
 
@@ -375,7 +376,7 @@ const SAKGHSBujuuko: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white" style={{ viewTransitionName: 'institution-sakghs-bujuuko' }}>
+    <div className="min-h-screen bg-white" style={{ viewTransitionName: 'institution-sakghs-kawaala' }}>
       {/* ── JSBI-style header ── */}
       <InlineHeader onApply={() => setIsApplyOpen(true)} />
 
@@ -384,7 +385,7 @@ const SAKGHSBujuuko: React.FC = () => {
          ══════════════════════ */}
       <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/premium_photo-1661861141158-be08023174e6.avif" alt="Campus" className="w-full h-full object-cover" loading="eager" />
+          <img src="/images/emmanuel-ikwuegbu-MUyq5MiVE2w-unsplash.jpg" alt="Campus" className="w-full h-full object-cover" loading="eager" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#800E13]/95 via-[#5C0A0F]/90 to-[#800E13]/80" />
         </div>
         {/* Diagonal accent */}
@@ -419,10 +420,10 @@ const SAKGHSBujuuko: React.FC = () => {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="hidden lg:flex flex-col items-center justify-center gap-6">
-              <img src="/Gombe High logo.png" alt="SAKGHS Logo" className="h-56 md:h-72 w-auto drop-shadow-2xl" />
+              <img src="/images/Gombe High logo.png" alt="SAKGHS Logo" className="h-56 md:h-72 w-auto drop-shadow-2xl" />
               <div className="flex items-center space-x-2">
                 <LuGraduationCap className="w-7 h-7 text-[#FFD700]" />
-                <span className="text-[#FFD700] font-bold tracking-wider uppercase text-sm">Excellence &amp; Character · Since 2003</span>
+                <span className="text-[#FFD700] font-bold tracking-wider uppercase text-sm">Excellence &amp; Character · Since 1995</span>
               </div>
             </motion.div>
           </div>
@@ -465,7 +466,7 @@ const SAKGHSBujuuko: React.FC = () => {
 
           {/* Filter tabs */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {[{ id: 'all', label: 'All Programs' }, { id: 'sciences', label: 'Sciences' }, { id: 'arts', label: 'Arts' }, { id: 'technical', label: 'Technical' }, { id: 'business', label: 'Business' }].map((t) => (
+            {[{ id:'all',label:'All Programs'},{id:'sciences',label:'Sciences'},{id:'arts',label:'Arts'},{id:'technical',label:'Technical'},{id:'business',label:'Business'}].map((t) => (
               <button key={t.id} onClick={() => setActiveTab(t.id)}
                 className={`px-6 py-3 rounded-full font-semibold transition-all text-sm ${
                   activeTab === t.id ? 'bg-[#800E13] text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
@@ -482,7 +483,7 @@ const SAKGHSBujuuko: React.FC = () => {
                 const pi  = programs.findIndex((p) => p.id === prog.id);
                 const img = prog.images[(programImages[pi] ?? 0) % prog.images.length];
                 return (
-                  <motion.div key={prog.id} layout initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ delay: index * 0.07 }}
+                  <motion.div key={prog.id} layout initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} exit={{ opacity:0, y:-10 }} transition={{ delay: index * 0.07 }}
                     className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col">
                     <div className="relative h-44 overflow-hidden">
                       <img src={img} alt={prog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
@@ -495,7 +496,7 @@ const SAKGHSBujuuko: React.FC = () => {
                       <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#800E13] transition-colors">{prog.title}</h3>
                       <p className="text-gray-500 text-sm leading-relaxed mb-4">{prog.description}</p>
                       <ul className="mt-auto space-y-1.5">
-                        {prog.subjects.slice(0, 4).map((s) => (
+                        {prog.subjects.slice(0,4).map((s) => (
                           <li key={s} className="flex items-center gap-2 text-xs text-gray-600">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700] shrink-0" />{s}
                           </li>
@@ -528,18 +529,18 @@ const SAKGHSBujuuko: React.FC = () => {
                 Shaping Lives,<span className="text-[#800E13]"> Building Leaders</span>
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Established in 2003 under the Gombe Education Service umbrella, St. Andrew Kaggwa Gombe High School –
-                Bujuuko Campus has grown into a respected Advanced Level institution in Wakiso District. We combine
-                academic rigour with character formation, preparing every student not just for university but for a life
+                Founded in 1995 under the Gombe Education Service umbrella, St. Andrew Kaggwa Gombe High School –
+                Kawaala has grown into one of Kampala's leading Advanced Level institutions. We combine academic
+                rigour with character formation, preparing every student not just for university but for a life
                 of purpose and impact.
               </p>
               <div className="space-y-6">
                 {[
                   { icon: LuUsers,    title: 'Personalised Attention',  desc: 'Small class sizes and dedicated teachers ensure every student gets the individual support they need to excel.' },
-                  { icon: LuAward,    title: 'National Recognition',     desc: 'Consistently ranked among top UACE performers in Wakiso; 95 % pass rate in the latest national examinations.' },
+                  { icon: LuAward,    title: 'National Recognition',     desc: 'Consistently ranked among top UACE performers in Kampala; 97 % pass rate in the latest national examinations.' },
                   { icon: LuBookOpen, title: 'Holistic Development',     desc: 'Beyond academics — arts, sports, clubs, community service, and leadership programmes shape the whole student.' },
                 ].map(({ icon: Icon, title, desc }, i) => (
-                  <motion.div key={title} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} className="flex items-start space-x-4">
+                  <motion.div key={title} initial={{ opacity:0, x:-20 }} whileInView={{ opacity:1, x:0 }} transition={{ delay: i*0.1 }} viewport={{ once:true }} className="flex items-start space-x-4">
                     <div className="w-12 h-12 rounded-full bg-[#FFF6CC] flex items-center justify-center flex-shrink-0">
                       <Icon className="w-6 h-6 text-[#800E13]" />
                     </div>
@@ -552,14 +553,14 @@ const SAKGHSBujuuko: React.FC = () => {
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
+            <motion.div initial={{ opacity:0, x:50 }} whileInView={{ opacity:1, x:0 }} viewport={{ once:true }} className="relative">
               <div className="relative">
-                <img src="/premium_photo-1722384028426-6ca4e892d7ab.avif" alt="Students studying"
+                <img src="/images/emmanuel-ikwuegbu-MUyq5MiVE2w-unsplash.jpg" alt="Students studying"
                   className="rounded-2xl shadow-2xl w-full object-cover" style={{ maxHeight: 460 }} loading="lazy" />
                 <div className="absolute -bottom-6 -left-6 bg-[#800E13] text-white p-8 rounded-2xl shadow-2xl">
-                  <div className="text-5xl font-bold mb-1" style={{ color: PRIMARY }}>20+</div>
+                  <div className="text-5xl font-bold mb-1" style={{ color: PRIMARY }}>30+</div>
                   <div className="text-base font-semibold">Years of Excellence</div>
-                  <div className="text-sm text-white/70">Established 2003</div>
+                  <div className="text-sm text-white/70">Established 1995</div>
                 </div>
               </div>
             </motion.div>
@@ -572,7 +573,7 @@ const SAKGHSBujuuko: React.FC = () => {
          ══════════════════════ */}
       <section className="py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+          <motion.div initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} className="text-center mb-14">
             <SectionLabel text="Partners & Affiliates" />
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Proudly Associated With</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -585,7 +586,7 @@ const SAKGHSBujuuko: React.FC = () => {
             <div className="flex overflow-hidden">
               <motion.div className="flex gap-16 items-center"
                 animate={{ x: [0, -1100] }}
-                transition={{ x: { repeat: Infinity, repeatType: 'loop', duration: 22, ease: 'linear' } }}
+                transition={{ x: { repeat: Infinity, repeatType:'loop', duration:22, ease:'linear' } }}
               >
                 {partners.map((p, i) => (
                   <div key={i} className="flex-shrink-0 w-36 h-20 flex items-center justify-center">
@@ -603,7 +604,7 @@ const SAKGHSBujuuko: React.FC = () => {
          ══════════════════════ */}
       <section id="admissions" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+          <motion.div initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} className="text-center mb-16">
             <SectionLabel text="Admissions" />
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Your Path to Enrolment</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -612,13 +613,13 @@ const SAKGHSBujuuko: React.FC = () => {
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {admissionSteps.map((step, i) => (
-              <motion.div key={step.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }} viewport={{ once: true }}
+              <motion.div key={step.title} initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} transition={{ delay: i*0.08 }} viewport={{ once:true }}
                 className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-[#FFD700] hover:shadow-lg transition-all duration-300">
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 rounded-xl bg-[#FFF6CC] flex items-center justify-center">
                     <step.icon className="w-6 h-6 text-[#800E13]" />
                   </div>
-                  <span className="text-sm font-semibold text-[#800E13]">Step {i + 1}</span>
+                  <span className="text-sm font-semibold text-[#800E13]">Step {i+1}</span>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{step.detail}</p>
@@ -633,15 +634,15 @@ const SAKGHSBujuuko: React.FC = () => {
          ══════════════════════ */}
       <section id="apply-now" className="py-20 bg-gradient-to-r from-[#800E13] to-[#5C0A0F]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.div initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }}>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Start Your Journey?</h2>
             <p className="text-xl text-white/70 mb-4 max-w-2xl mx-auto">
               Join hundreds of graduates who have gone on to Uganda's top universities and careers around the world.
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-sm text-white/80 mb-10">
-              <div className="flex items-center gap-2"><LuMapPin className="w-4 h-4 text-[#FFD700]" /><span>Bujuuko, Wakiso, Uganda</span></div>
+              <div className="flex items-center gap-2"><LuMapPin className="w-4 h-4 text-[#FFD700]" /><span>Kawaala, Kampala, Uganda</span></div>
               <div className="flex items-center gap-2"><LuPhone className="w-4 h-4 text-[#FFD700]" /><span>+256 700 000 000</span></div>
-              <div className="flex items-center gap-2"><LuMail className="w-4 h-4 text-[#FFD700]" /><span>info@sakghs-bujuuko.ges.ac.ug</span></div>
+              <div className="flex items-center gap-2"><LuMail className="w-4 h-4 text-[#FFD700]" /><span>info@sakghs-kawaala.ges.ac.ug</span></div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button onClick={() => setIsApplyOpen(true)}
@@ -664,10 +665,10 @@ const SAKGHSBujuuko: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">
-              <img src="/Gombe High logo.png" alt="SAKGHS" className="h-20 w-auto mb-4 grayscale brightness-150" loading="lazy" />
+              <img src="/images/Gombe High logo.png" alt="SAKGHS" className="h-20 w-auto mb-4 grayscale brightness-150" loading="lazy" />
               <h3 className="text-base font-bold text-white mb-2">St. Andrew Kaggwa Gombe High School</h3>
               <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-                Providing quality advanced-level education since 2003. Two campuses — Bujuuko and Kawaala —
+                Providing quality advanced-level education since 1995. Two campuses — Kawaala and Bujuuko —
                 united by a commitment to excellence, character, and university readiness.
               </p>
               <div className="flex items-center gap-3">
@@ -681,7 +682,7 @@ const SAKGHSBujuuko: React.FC = () => {
             <div>
               <h3 className="text-base font-bold mb-4 text-white">Quick Links</h3>
               <ul className="space-y-2">
-                {[['Home', '#home'], ['About Us', '#school-profile'], ['Academic Programs', '#programs'], ['Admissions', '#admissions'], ['Student Life', '#gallery'], ['Apply Now', '#apply-now']].map(([l, h]) => (
+                {[['Home','#home'],['About Us','#school-profile'],['Academic Programs','#programs'],['Admissions','#admissions'],['Student Life','#gallery'],['Apply Now','#apply-now']].map(([l,h]) => (
                   <li key={l}><a href={h} className="text-gray-400 hover:text-[#FFD700] transition-colors text-sm">{l}</a></li>
                 ))}
               </ul>
@@ -689,9 +690,9 @@ const SAKGHSBujuuko: React.FC = () => {
             <div>
               <h3 className="text-base font-bold mb-4 text-white">Contact Us</h3>
               <ul className="space-y-3">
-                <li className="flex items-start gap-3"><LuMapPin className="w-4 h-4 text-[#FFD700] shrink-0 mt-0.5" /><span className="text-gray-400 text-sm">Bujuuko, Wakiso, Uganda</span></li>
+                <li className="flex items-start gap-3"><LuMapPin className="w-4 h-4 text-[#FFD700] shrink-0 mt-0.5" /><span className="text-gray-400 text-sm">Kawaala, Kampala, Uganda</span></li>
                 <li className="flex items-center gap-3"><LuPhone className="w-4 h-4 text-[#FFD700] shrink-0" /><span className="text-gray-400 text-sm">+256 700 000 000</span></li>
-                <li className="flex items-center gap-3"><LuMail className="w-4 h-4 text-[#FFD700] shrink-0" /><span className="text-gray-400 text-sm">info@sakghs-bujuuko.ges.ac.ug</span></li>
+                <li className="flex items-center gap-3"><LuMail className="w-4 h-4 text-[#FFD700] shrink-0" /><span className="text-gray-400 text-sm">info@sakghs-kawaala.ges.ac.ug</span></li>
               </ul>
             </div>
           </div>
@@ -704,7 +705,7 @@ const SAKGHSBujuuko: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-gray-400 text-xs">Powered by</span>
-                <img src="/Inzozi-grayscale.png" alt="Inzozi" className="h-8 w-auto brightness-0 invert opacity-60" loading="lazy" />
+                <img src="/images/Inzozi-grayscale.png" alt="Inzozi" className="h-8 w-auto brightness-0 invert opacity-60" loading="lazy" />
               </div>
             </div>
           </div>
@@ -729,7 +730,7 @@ const SAKGHSBujuuko: React.FC = () => {
               <div className="flex justify-between items-center mb-6">
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900">Apply Now</h2>
-                  <p className="text-sm text-gray-500 mt-1">St. Andrew Kaggwa Gombe HS – Bujuuko</p>
+                  <p className="text-sm text-gray-500 mt-1">St. Andrew Kaggwa Gombe HS – Kawaala</p>
                 </div>
                 <button onClick={() => setIsApplyOpen(false)} className="text-gray-400 hover:text-gray-700 text-2xl font-light leading-none">×</button>
               </div>
@@ -776,4 +777,4 @@ const SAKGHSBujuuko: React.FC = () => {
   );
 };
 
-export default SAKGHSBujuuko;
+export default SAKGHSKawaala;

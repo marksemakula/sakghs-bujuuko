@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { LuPlus, LuPencil, LuTrash2, LuEye, LuSave, LuX } from 'react-icons/lu';

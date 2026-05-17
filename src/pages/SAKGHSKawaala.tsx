@@ -379,7 +379,7 @@ const SAKGHSKawaala: React.FC = () => {
   /* Title & favicon */
   useEffect(() => {
     const prev = document.title;
-    document.title = 'St. Andrew Kaggwa Gombe HS \u2013 Kawaala';
+    document.title = 'St. Andrew Kaggwa Gombe HS \u2013 Bujuuko';
     return () => { document.title = prev; };
   }, []);
 
@@ -428,7 +428,7 @@ const SAKGHSKawaala: React.FC = () => {
                 <span className="block text-[#FFD700]">of Wisdom.</span>
               </h1>
               <p className="text-xl text-gray-200 mb-8 leading-relaxed max-w-xl">
-                St. Andrew Kaggwa Gombe High School – Kawaala Campus provides world-class secondary
+                St. Andrew Kaggwa Gombe High School – Bujuuko Campus provides world-class secondary
                 education that shapes character, cultivates intellect, and opens doors to Uganda's top universities.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -560,7 +560,7 @@ const SAKGHSKawaala: React.FC = () => {
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Established in June 2016 under the Gombe Education Service umbrella, St. Andrew Kaggwa Gombe
-                High School – Kawaala (Reg. No. Pss/s/141) is a vibrant mixed day and boarding secondary
+                High School – Bujuuko (Reg. No. Pss/s/141) is a vibrant mixed day and boarding secondary
                 school. Committed to academic excellence, character formation, and innovation, we empower
                 every learner to discover their potential and pursue their aspirations.
               </p>
@@ -677,7 +677,7 @@ const SAKGHSKawaala: React.FC = () => {
           <motion.div initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }}>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Start Your Journey?</h2>
             <div className="flex flex-wrap justify-center gap-6 text-sm text-white/80 mb-10">
-              <div className="flex items-center gap-2"><LuMapPin className="w-4 h-4 text-[#FFD700]" /><span>Kasubi, Kawaala, Hoima Road, Kampala</span></div>
+              <div className="flex items-center gap-2"><LuMapPin className="w-4 h-4 text-[#FFD700]" /><span>Bujuuko, Mityana Road, Mpigi District</span></div>
               <div className="flex items-center gap-2"><LuPhone className="w-4 h-4 text-[#FFD700]" /><span>0708 700 001 / 0708 700 002 / 0708 700 009</span></div>
               <div className="flex items-center gap-2"><LuMail className="w-4 h-4 text-[#FFD700]" /><span>info@gombehighschool.ac.ug</span></div>
             </div>
@@ -695,7 +695,7 @@ const SAKGHSKawaala: React.FC = () => {
               <img src="/images/Gombe High logo.png" alt="SAKGHS" className="h-20 w-auto mb-4 grayscale brightness-150" loading="lazy" />
               <h3 className="text-base font-bold text-white mb-2">St. Andrew Kaggwa Gombe High School</h3>
               <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-                Established in 2016, St. Andrew Kaggwa Gombe High School Kawaala is a mixed day and boarding
+                Established in 2016, St. Andrew Kaggwa Gombe High School Bujuuko is a mixed day and boarding
                 secondary school committed to academic excellence, character formation, and holistic development,
                 guided by the motto: "Light the Lamp of Wisdom."
               </p>
@@ -718,7 +718,7 @@ const SAKGHSKawaala: React.FC = () => {
             <div>
               <h3 className="text-base font-bold mb-4 text-white">Contact Us</h3>
               <ul className="space-y-3">
-                <li className="flex items-start gap-3"><LuMapPin className="w-4 h-4 text-[#FFD700] shrink-0 mt-0.5" /><span className="text-gray-400 text-sm">Kasubi, Kawaala, Hoima Road, Kampala</span></li>
+                <li className="flex items-start gap-3"><LuMapPin className="w-4 h-4 text-[#FFD700] shrink-0 mt-0.5" /><span className="text-gray-400 text-sm">Bujuuko, Mityana Road, Mpigi District</span></li>
                 <li className="flex items-center gap-3"><LuPhone className="w-4 h-4 text-[#FFD700] shrink-0" /><a href="tel:+256708700001" className="text-gray-400 text-sm hover:text-[#FFD700] transition-colors">0708 700 001</a></li>
                 <li className="flex items-center gap-3"><LuPhone className="w-4 h-4 text-[#FFD700] shrink-0" /><a href="tel:+256708700002" className="text-gray-400 text-sm hover:text-[#FFD700] transition-colors">0708 700 002</a></li>
                 <li className="flex items-center gap-3"><LuPhone className="w-4 h-4 text-[#FFD700] shrink-0" /><a href="tel:+256708700009" className="text-gray-400 text-sm hover:text-[#FFD700] transition-colors">0708 700 009</a></li>
@@ -760,7 +760,7 @@ const SAKGHSKawaala: React.FC = () => {
               <div className="flex justify-between items-center mb-6">
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900">Apply Now</h2>
-                  <p className="text-sm text-gray-500 mt-1">St. Andrew Kaggwa Gombe HS – Kawaala</p>
+                  <p className="text-sm text-gray-500 mt-1">St. Andrew Kaggwa Gombe HS – Bujuuko</p>
                 </div>
                 <button onClick={() => setIsApplyOpen(false)} className="text-gray-400 hover:text-gray-700 text-2xl font-light leading-none">×</button>
               </div>

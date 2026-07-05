@@ -35,9 +35,9 @@ const navItems: NavItem[] = [
     label: 'About Us',
     items: [
       { label: 'School Profile',                    href: '/school-profile' },
-      { label: 'Mission and Vision',                href: '#mission-vision' },
-      { label: 'Core Values',                       href: '#core-values' },
-      { label: 'Board of Governors',                href: '#board-of-governors' },
+      { label: 'Mission and Vision',                href: '/school-profile' },
+      { label: 'Core Values',                       href: '/school-profile' },
+      { label: 'School Management Committee',       href: '/management-committee' },
       { label: "Principal's Message",               href: '/principals-message' },
       { label: 'Administration and Management Team',href: '#administration' },
     ],

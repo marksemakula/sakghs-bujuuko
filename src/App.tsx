@@ -9,6 +9,7 @@ const PrincipalsMessage = lazy(() => import('./pages/PrincipalsMessage'));
 const SchoolProfile     = lazy(() => import('./pages/SchoolProfile'));
 const UnebResults       = lazy(() => import('./pages/UnebResults'));
 const Gallery           = lazy(() => import('./pages/Gallery'));
+const ManagementCommittee = lazy(() => import('./pages/ManagementCommittee'));
 
 const LoadingFallback: React.FC = () => (
   <div className="min-h-screen flex items-center justify-center bg-[#800E13]">
@@ -37,6 +38,7 @@ function App() {
           <Route path="/school-profile"     element={<SchoolProfile />} />
           <Route path="/uneb-results"       element={<UnebResults />} />
           <Route path="/gallery"            element={<Gallery />} />
+          <Route path="/management-committee" element={<ManagementCommittee />} />
           <Route path="/*"                  element={<SAKGHSKawaala />} />
         </Routes>
       </Suspense>

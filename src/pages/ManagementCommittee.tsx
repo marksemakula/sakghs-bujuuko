@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   LuChevronDown, LuMenu, LuX, LuArrowLeft,
-  LuBookOpen, LuMail, LuAward, LuCalendar,
-  LuMapPin, LuPhone,
+  LuMapPin, LuPhone, LuMail, LuAward,
 } from 'react-icons/lu';
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaYoutube, FaTiktok } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
@@ -137,7 +136,7 @@ const PageHeader: React.FC = () => {
                       {item.items.map((sub) => (
                         <a key={sub.label} href={sub.href} onClick={() => setOpenDropdown(null)}
                           className={`block px-5 py-2.5 text-sm font-medium transition-colors rounded-xl ${
-                            sub.href === '/uneb-results'
+                            sub.href === '/management-committee'
                               ? 'bg-[#FFF6CC] text-[#800E13]'
                               : 'text-gray-700 hover:bg-[#FFF6CC] hover:text-[#800E13]'
                           }`}>
@@ -212,25 +211,36 @@ const PageHeader: React.FC = () => {
 };
 
 /* ─────────────────────────────
-   Section Label
+   Main Component
    ───────────────────────────── */
-const SectionLabel: React.FC<{ text: string; light?: boolean }> = ({ text, light }) => (
-  <div className="flex items-center space-x-2 mb-4">
-    <div className="h-1 w-12 bg-[#800E13]" />
-    <span className="text-[#800E13] font-bold tracking-wider uppercase text-sm">{text}</span>
-  </div>
-);
-
-/* ═══════════════════════════════
-   MAIN PAGE
-   ═══════════════════════════════ */
-const UnebResults: React.FC = () => {
+const ManagementCommittee: React.FC = () => {
   useEffect(() => {
     const prev = document.title;
-    document.title = 'UNEB Results Archives – St. Andrew Kaggwa Gombe HS';
+    document.title = 'School Management Committee – St. Andrew Kaggwa Gombe HS';
     window.scrollTo(0, 0);
     return () => { document.title = prev; };
   }, []);
+
+  const members = [
+    {
+      name: 'Owek. Kyewalabye David Male',
+      role: 'Managing Director, Gombe Education Service (GES)',
+      image: '/Owek. Kyewalabye David Male.png',
+      bio: 'Providing visionary leadership and strategic direction for Gombe Education Service. Dedicated to maintaining high educational standards, infrastructural advancement, and strategic partnerships that elevate student performance across all campuses.',
+    },
+    {
+      name: 'Mrs. Harriet Mulyanti',
+      role: 'GES Executive Chairperson',
+      image: '/GES Executive Chairperson Mrs Harriet Mulyanti.JPG',
+      bio: 'Oversing administrative standards, governance, and institutional integrity. Focused on fostering a disciplined, supportive environment that aligns academic curricula with Gombe\'s values and character-first philosophy.',
+    },
+    {
+      name: 'Daniella Nakayenga',
+      role: 'GES Rector',
+      image: '/GES Rector - Daniella Nakayenga.jpeg',
+      bio: 'Managing academic policy coordination, quality assurance, and student welfare systems. Dedicated to driving modern pedagogy and character cultivation practices that ensure students achieve national academic excellence.',
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -238,8 +248,7 @@ const UnebResults: React.FC = () => {
 
       {/* ── Hero banner ── */}
       <div className="relative pt-24 pb-16 bg-gradient-to-r from-[#800E13] to-[#5C0A0F] overflow-hidden">
-        <img src="/St. Andrew Kaggwa Gombe High School - Bujuuko/St. Andrew Kaggwa Gombe High School - Bujuuko36.jpeg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" loading="eager" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#800E13]/80 to-[#5C0A0F]/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#800E13]/90 to-[#5C0A0F]/90" />
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent" />
         <div className="absolute inset-0 opacity-10"
           style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, #FFD700 0%, transparent 50%), radial-gradient(circle at 80% 20%, #FFD700 0%, transparent 40%)' }} />
@@ -250,98 +259,66 @@ const UnebResults: React.FC = () => {
             </a>
             <div className="flex items-center gap-3 mb-4">
               <div className="h-1 w-12 bg-[#FFD700]" />
-              <span className="text-[#FFD700] font-bold tracking-wider uppercase text-sm">Academic Excellence</span>
+              <span className="text-[#FFD700] font-bold tracking-wider uppercase text-sm">Governance</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
-              UNEB Results <span className="text-[#FFD700]">Archives</span>
+              School <span className="text-[#FFD700]">Management Committee</span>
             </h1>
-            <p className="text-white/70 text-lg">Celebrating our students' outstanding achievements in Uganda's national examinations.</p>
+            <p className="text-white/70 text-lg">Guided by a committed leadership team dedicated to nurturing character and pursuing excellence.</p>
           </motion.div>
         </div>
       </div>
 
-      {/* ── Results gallery ── */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ── Profiles Grid ── */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { title: 'UCE 2024 Results', image: '/St. Andrew Kaggwa Gombe High School - Bujuuko/St. Andrew Kaggwa Gombe High School - Bujuuko33.jpeg' },
-              { title: 'UCE 2025 Results', image: '/St. Andrew Kaggwa Gombe High School - Bujuuko/St. Andrew Kaggwa Gombe High School - Bujuuko36.jpeg' },
-              { title: 'UACE 2025 Results', image: '/St. Andrew Kaggwa Gombe High School - Bujuuko/St. Andrew Kaggwa Gombe High School - Bujuuko37.jpeg' },
-            ].map((result, index) => (
-              <motion.div key={result.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}
-                className="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={result.image} alt={result.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{result.title}</h3>
-                  <p className="text-gray-600 text-sm">Click to view full results</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════
-          ADMISSIONS
-         ══════════════════════ */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} className="text-center mb-16">
-            <SectionLabel text="Admissions" />
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Your Path to Enrolment</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Follow these simple steps to secure your place in the next intake and begin your journey to excellence.
-            </p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: 'Explore Programs', detail: 'Review our academic programs and choose the one that best fits your interests and goals.', icon: LuBookOpen },
-              { title: 'Submit Application', detail: 'Complete the online application form with all required documents and personal information.', icon: LuMail },
-              { title: 'Prepare Documents', detail: 'Gather your PLE results or O-level transcripts, national ID / birth certificate, and two passport photos for review.', icon: LuAward },
-              { title: 'Submit & Interview', detail: 'Apply online or visit the campus admissions office, then complete a brief placement assessment or interview.', icon: LuCalendar },
-            ].map((step, i) => (
-              <motion.div key={step.title} initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} transition={{ delay: i*0.08 }} viewport={{ once:true }}
-                className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-[#FFD700] hover:shadow-lg transition-all duration-300">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#FFF6CC] flex items-center justify-center">
-                    <step.icon className="w-6 h-6 text-[#800E13]" />
+            {members.map((m, idx) => (
+              <motion.div
+                key={m.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col"
+              >
+                <div className="aspect-[4/5] relative overflow-hidden bg-gray-100">
+                  <img
+                    src={m.image}
+                    alt={m.name}
+                    className="w-full h-full object-cover object-top hover:scale-102 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="text-2xl font-bold text-white mb-1">{m.name}</h3>
+                    <p className="text-[#FFD700] text-sm font-semibold uppercase tracking-wider">{m.role}</p>
                   </div>
-                  <span className="text-sm font-semibold text-[#800E13]">Step {i+1}</span>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{step.detail}</p>
+                <div className="p-8 flex-1 flex flex-col justify-between">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 italic">"{m.bio}"</p>
+                  <div className="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
+                    <span className="text-xs text-gray-400">Gombe Education Service</span>
+                    <LuAward className="w-5 h-5 text-[#800E13]" />
+                  </div>
+                </div>
               </motion.div>
             ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Admission Requirements</h3>
-            <p className="text-gray-600 mb-6">Download the complete list of requirements for the 2026 intake.</p>
-            <a href="/GOMBE HIGH SCHOOL - KAWAALA/Admissions/Requirements List 2026.pdf" download
-              className="inline-flex items-center gap-2 bg-[#800E13] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#5C0A0F] transition-colors">
-              <LuBookOpen className="w-5 h-5" />
-              Download Requirements PDF
-            </a>
           </div>
         </div>
       </section>
 
-      {/* ══════════════════════
-          FOOTER
-         ══════════════════════ */}
-      <footer className="bg-gray-900 text-white pt-16 pb-4">
+      {/* ── Footer ── */}
+      <footer className="bg-gray-900 text-white pt-12 pb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div className="md:col-span-2">
-              <img src="/images/Gombe High logo.png" alt="SAKGHS" className="h-40 w-auto mb-4" loading="lazy" />
+          <div className="flex flex-col md:flex-row justify-between gap-8 mb-8">
+            <div className="max-w-sm">
+              <img src="/images/Gombe High logo.png" alt="SAKGHS" className="h-32 w-auto mb-3" loading="lazy" />
               <h3 className="text-base font-bold text-white mb-2">St. Andrew Kaggwa Gombe High School</h3>
-              <p className="text-gray-400 mb-6 text-sm leading-relaxed">
+              <p className="text-gray-400 text-sm leading-relaxed">
                 Light the Lamp of Wisdom.
               </p>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 mt-4">
                 {[
                   { icon: FaFacebook, href: "https://www.facebook.com/share/1KtMX5AvjT/", label: "Facebook" },
                   { icon: FaXTwitter, href: "https://x.com/gombehighschool", label: "X" },
@@ -349,7 +326,7 @@ const UnebResults: React.FC = () => {
                   { icon: FaYoutube, href: "https://www.youtube.com/@watchgombess", label: "YouTube" },
                   { icon: FaTiktok, href: "https://www.tiktok.com/@gombehighschoolkawaala?_r=1&_t=ZS-97XNihHM2hL", label: "TikTok" }
                 ].map((social) => (
-                  <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FFD700]/20 hover:text-[#FFD700] transition-colors text-gray-300" aria-label={social.label}>
+                  <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FFD700]/20 hover:text-[#FFD700] transition-colors text-gray-300" aria-label={social.label}>
                     <social.icon className="w-4 h-4" />
                   </a>
                 ))}
@@ -358,33 +335,14 @@ const UnebResults: React.FC = () => {
             <div>
               <h3 className="text-base font-bold mb-4 text-white">Quick Links</h3>
               <ul className="space-y-2">
-                {[['Home','/'],['About Us','/#school-profile'],['Academic Programs','/#programs'],['Admissions','/#admissions'],['Student Life','/#gallery'],['Apply Now','/#apply-now']].map(([l,h]) => (
+                {[['Home', '/'], ['School Profile', '/#school-profile'], ['Programs', '/#programs'], ['Admissions', '/#admissions'], ["Principal's Message", '/principals-message']].map(([l, h]) => (
                   <li key={l}><a href={h} className="text-gray-400 hover:text-[#FFD700] transition-colors text-sm">{l}</a></li>
                 ))}
               </ul>
             </div>
-            <div>
-              <h3 className="text-base font-bold mb-4 text-white">Contact Us</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3"><LuMapPin className="w-4 h-4 text-[#FFD700] shrink-0 mt-0.5" /><span className="text-gray-400 text-sm">Bujuuko, Mityana Road, Mpigi District</span></li>
-                <li className="flex items-center gap-3"><LuPhone className="w-4 h-4 text-[#FFD700] shrink-0" /><a href="tel:+256708700001" className="text-gray-400 text-sm hover:text-[#FFD700] transition-colors">+256 708 700 001</a></li>
-                <li className="flex items-center gap-3"><LuPhone className="w-4 h-4 text-[#FFD700] shrink-0" /><a href="tel:+256708700006" className="text-gray-400 text-sm hover:text-[#FFD700] transition-colors">+256 708 700 006/2</a></li>
-                <li className="flex items-center gap-3"><LuMail className="w-4 h-4 text-[#FFD700] shrink-0" /><a href="mailto:info@gombehighschool.ac.ug" className="text-gray-400 text-sm hover:text-[#FFD700] transition-colors">info@gombehighschool.ac.ug</a></li>
-              </ul>
-            </div>
           </div>
-          <div className="pt-4 pb-2 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="pt-4 text-center">
             <p className="text-gray-400 text-sm">© {new Date().getFullYear()} St. Andrew Kaggwa Gombe High School. All rights reserved.</p>
-            <div className="flex items-center gap-6">
-              <div className="flex gap-4 text-sm">
-                <a href="#" className="text-gray-400 hover:text-[#FFD700] transition-colors">Privacy Policy</a>
-                <a href="#" className="text-gray-400 hover:text-[#FFD700] transition-colors">Terms of Service</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-gray-400 text-xs">Powered by</span>
-                <img src="/images/Inzozi-grayscale.png" alt="Inzozi" className="h-8 w-auto brightness-0 invert opacity-60" loading="lazy" />
-              </div>
-            </div>
           </div>
         </div>
       </footer>
@@ -392,4 +350,4 @@ const UnebResults: React.FC = () => {
   );
 };
 
-export default UnebResults;
+export default ManagementCommittee;

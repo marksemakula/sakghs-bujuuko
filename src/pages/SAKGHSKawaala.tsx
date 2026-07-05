@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useInView, useMotionValue, useSpring, animate } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
-  LuArrowRight, LuGraduationCap, LuUsers, LuAward, LuBookOpen, LuTarget,
+  LuArrowRight, LuGraduationCap, LuUsers, LuAward, LuBookOpen,
   LuCalendar, LuMapPin, LuPhone, LuMail, LuMenu, LuX, LuChevronDown,
   LuPlay, LuMicroscope, LuPalette, LuCpu, LuBriefcase,
 } from 'react-icons/lu';
@@ -14,12 +14,15 @@ import { FaXTwitter } from 'react-icons/fa6';
 const PRIMARY   = '#FFD700';
 const SECONDARY = '#800E13';
 
+/* Bujuuko campus photo helper */
+const BUJ = (n: number) =>
+  `/St. Andrew Kaggwa Gombe High School - Bujuuko/St. Andrew Kaggwa Gombe High School - Bujuuko${n}.jpeg`;
+
 /* ─────────────────────────────
    Types
    ───────────────────────────── */
 interface NavSubItem { label: string; href: string }
 interface NavItem    { label: string; items: NavSubItem[] }
-interface Stat       { icon: React.ElementType; label: string; sublabel: string; numeric: number; suffix: string }
 interface Program    { id: string; category: string; title: string; icon: React.ElementType; description: string; subjects: string[]; images: string[]; color: string }
 interface AdmissionStep { title: string; detail: string; icon: React.ElementType }
 interface Partner    { name: string; logo: string }
@@ -68,15 +71,6 @@ const navItems: NavItem[] = [
   },
 ];
 
-/* ─────────────────────────────
-   Stats
-   ───────────────────────────── */
-const stats: Stat[] = [
-  { icon: LuUsers,    label: 'Students Enrolled',    sublabel: 'Active Learners',     numeric: 550, suffix: '+' },
-  { icon: LuAward,    label: 'UACE Pass Rate',        sublabel: 'National Excellence', numeric: 97,  suffix: '%' },
-  { icon: LuBookOpen, label: 'Subjects Offered',      sublabel: 'Broad Curriculum',    numeric: 20,  suffix: '+' },
-  { icon: LuTarget,   label: 'University Admissions', sublabel: 'Class of 2024',       numeric: 94,  suffix: '%' },
-];
 
 /* ─────────────────────────────
    Programs
@@ -87,11 +81,7 @@ const programs: Program[] = [
     title: 'Sciences Program', icon: LuMicroscope,
     description: 'Rigorous science curriculum covering Physics, Chemistry, Biology, and Mathematics — preparing students for medicine, engineering and technology.',
     subjects: ['Physics','Chemistry','Biology','Mathematics','ICT','Sub-Maths'],
-    images: [
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_9893.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_2096.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_2101.JPG'
-    ],
+    images: [BUJ(29), BUJ(28), BUJ(30)],
     color: 'from-[#800E13] to-[#5C0A0F]',
   },
   {
@@ -99,19 +89,7 @@ const programs: Program[] = [
     title: 'Arts Program', icon: LuPalette,
     description: 'Broad liberal arts education in languages, humanities and social sciences — building critical thinking, communication and cultural literacy.',
     subjects: ['Literature in English','History','Geography','Economics','Languages','Divinity'],
-    images: [
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/DANCESPORT/_MG_6845.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/DANCESPORT/IMG_6935.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/DANCESPORT/_MG_6924.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/DANCESPORT/_MG_6876.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/DANCESPORT/_MG_6831.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/DANCESPORT/_MG_6907.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/DANCESPORT/_MG_6888.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/DANCESPORT/_MG_6923.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/DANCESPORT/_MG_6778.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_9807.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_2146.JPG'
-    ],
+    images: [BUJ(23), BUJ(27), BUJ(22)],
     color: 'from-amber-700 to-yellow-700',
   },
   {
@@ -119,12 +97,7 @@ const programs: Program[] = [
     title: 'Technical Program', icon: LuCpu,
     description: 'Hands-on development in technical and vocational subjects, equipping students with practical competencies for industry and enterprise.',
     subjects: ['Technical Drawing','Computer Science','Agriculture','Business Studies','Entrepreneurship'],
-    images: [
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_9893.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_9876.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_9899.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/TOURS/_MG_7489.JPG'
-    ],
+    images: [BUJ(26), BUJ(31), BUJ(30)],
     color: 'from-slate-700 to-gray-800',
   },
   {
@@ -132,12 +105,7 @@ const programs: Program[] = [
     title: 'Business Studies', icon: LuBriefcase,
     description: 'Develop entrepreneurial thinking and business acumen through practical economics, accounting and commerce — the foundation for tomorrow\'s leaders.',
     subjects: ['Economics','Accounting','Commerce','Entrepreneurship','Business Management'],
-    images: [
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_9777.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_9794.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_9718.JPG',
-      '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_9712.JPG'
-    ],
+    images: [BUJ(28), BUJ(29), BUJ(26)],
     color: 'from-emerald-700 to-teal-700',
   },
 ];
@@ -164,27 +132,6 @@ const rawPartners: Partner[] = [
 ];
 const partners: Partner[] = [...rawPartners, ...rawPartners];
 
-/* ─────────────────────────────
-   Animated counter
-   ───────────────────────────── */
-const Counter: React.FC<{ target: number; suffix: string }> = ({ target, suffix }) => {
-  const ref      = useRef<HTMLSpanElement>(null);
-  const inView   = useInView(ref, { once: true, margin: '-60px' });
-  const motionVal = useMotionValue(0);
-  const spring   = useSpring(motionVal, { damping: 40, stiffness: 200 });
-
-  useEffect(() => {
-    if (!inView) return;
-    const ctrl = animate(motionVal, target, { duration: 1.8, ease: 'easeOut' });
-    return () => ctrl.stop();
-  }, [inView, motionVal, target]);
-
-  useEffect(() => spring.on('change', (v) => {
-    if (ref.current) ref.current.textContent = `${Math.round(v)}${suffix}`;
-  }), [spring, suffix]);
-
-  return <span ref={ref}>0{suffix}</span>;
-};
 
 /* ─────────────────────────────
    Section label
@@ -352,7 +299,6 @@ const InlineHeader: React.FC<{ onApply: () => void }> = ({ onApply }) => {
 const SAKGHSKawaala: React.FC = () => {
   const [activeTab,        setActiveTab]        = useState<string>('all');
   const [isApplyOpen,      setIsApplyOpen]      = useState(false);
-  const [isVideoOpen,      setIsVideoOpen]      = useState(false);
   const [programImages,    setProgramImages]    = useState<Record<number,number>>(() =>
     Object.fromEntries(programs.map((_, i) => [i, 0]))
   );
@@ -412,8 +358,8 @@ const SAKGHSKawaala: React.FC = () => {
          ══════════════════════ */}
       <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/IMG_9777.JPG" alt="Campus" className="w-full h-full object-cover" loading="eager" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#800E13]/95 via-[#5C0A0F]/90 to-[#800E13]/80" />
+          <img src={BUJ(23)} alt="SAKGHS Bujuuko student leaders" className="w-full h-full object-cover" loading="eager" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/20" />
         </div>
         {/* Diagonal accent */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-[#800E13] to-[#FFD700]/10 transform skew-x-12 origin-top-right opacity-20 pointer-events-none" />
@@ -439,18 +385,29 @@ const SAKGHSKawaala: React.FC = () => {
                   <span>Apply Now</span>
                   <LuArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button
-                  onClick={() => setIsVideoOpen(true)}
+                <a
+                  href="#programs"
                   className="group bg-white/10 border-2 border-white/40 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition flex items-center justify-center space-x-2"
                 >
                   <LuPlay className="w-5 h-5" />
                   <span>Our Programs</span>
-                </button>
+                </a>
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="hidden lg:flex flex-col items-center justify-center gap-6">
-              <img src="/images/Gombe High logo.png" alt="SAKGHS Logo" className="h-[17.5rem] md:h-[22.5rem] w-auto drop-shadow-2xl" />
-              <div className="flex items-center space-x-2">
+              <div className="relative">
+                {/* Back card */}
+                <img src={BUJ(20)} alt="SAKGHS student leaders" loading="eager"
+                  className="absolute -top-6 -right-8 w-56 h-72 object-cover rounded-3xl border-2 border-white/20 shadow-2xl rotate-6 opacity-80" />
+                {/* Front card */}
+                <img src={BUJ(17)} alt="SAKGHS head prefect" loading="eager"
+                  className="relative w-72 h-96 object-cover rounded-3xl border-4 border-[#FFD700]/60 shadow-2xl -rotate-2" />
+                {/* Logo badge */}
+                <div className="absolute -bottom-12 -left-16 h-72 w-72 rounded-full bg-white shadow-2xl border-4 border-[#FFD700] flex items-center justify-center p-6">
+                  <img src="/images/Gombe High logo.png" alt="SAKGHS Logo" className="h-full w-full object-contain" />
+                </div>
+              </div>
+              <div className="flex items-center space-x-2 mt-4">
                 <LuGraduationCap className="w-7 h-7 text-[#FFD700]" />
                 <span className="text-[#FFD700] font-bold tracking-wider uppercase text-sm">Excellence &amp; Character · Since 2016</span>
               </div>
@@ -460,23 +417,40 @@ const SAKGHSKawaala: React.FC = () => {
       </section>
 
       {/* ══════════════════════
-          STATS
+          AFFILIATIONS / LOGOS (REPLACING STATS)
          ══════════════════════ */}
-      <section
-        className="py-9 bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center overflow-hidden"
-      >
-        <div
-          className="w-full"
-          style={{
-            backgroundImage: 'url(/SAKGHS_AFR.jpg)',
-            backgroundRepeat: 'repeat-x',
-            backgroundPosition: 'center center',
-            backgroundSize: '720px 119px',
-            height: '119px',
-          }}
-          role="img"
-          aria-label="SAKGHS Banner"
-        />
+      <section className="relative py-16 overflow-hidden bg-gray-50 border-y border-gray-100">
+        <div className="absolute inset-0">
+          <img src={BUJ(36)} alt="" className="w-full h-full object-cover grayscale opacity-[0.12]" loading="lazy" />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-50/95 via-transparent to-gray-50/95" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+            {[
+              { src: '/images/scooby-logo.png', alt: 'Scooby' },
+              { src: '/images/Flag_of_Buganda.svg', alt: 'Buganda Kingdom' },
+              { src: '/images/MoES1.png', alt: 'MoES' },
+              { src: '/images/IEAC.png', alt: 'IEAC' },
+              { src: '/images/UNEB.png', alt: 'UNEB' },
+            ].map((logo, i) => (
+              <motion.div
+                key={logo.src}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="relative w-44 h-24 flex items-center justify-center transition-all duration-300 hover:scale-110"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="relative max-h-20 max-w-full object-contain filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.06)]"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ══════════════════════
@@ -585,8 +559,10 @@ const SAKGHSKawaala: React.FC = () => {
 
             <motion.div initial={{ opacity:0, x:50 }} whileInView={{ opacity:1, x:0 }} viewport={{ once:true }} className="relative">
               <div className="relative">
-                <img src="/IMG_1952.JPG" alt="Students studying"
-                  className="rounded-2xl shadow-2xl w-full object-cover" style={{ maxHeight: 460 }} loading="lazy" />
+                <img src={BUJ(22)} alt="Students with their teacher"
+                  className="rounded-2xl shadow-2xl w-full object-cover object-top" style={{ maxHeight: 460 }} loading="lazy" />
+                <img src={BUJ(27)} alt="Student on campus"
+                  className="hidden md:block absolute -top-8 -right-6 w-40 h-52 object-cover rounded-2xl border-4 border-white shadow-2xl rotate-3" loading="lazy" />
                 <div className="absolute -bottom-6 -left-6 bg-[#800E13] text-white p-8 rounded-2xl shadow-2xl">
                   <div className="text-5xl font-bold mb-1" style={{ color: PRIMARY }}>9+</div>
                   <div className="text-base font-semibold">Years of Excellence</div>
@@ -664,6 +640,45 @@ const SAKGHSKawaala: React.FC = () => {
               className="inline-flex items-center gap-2 bg-[#800E13] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#5C0A0F] transition-colors">
               <LuBookOpen className="w-5 h-5" />
               Download Requirements PDF
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════
+          STUDENT LIFE STRIP
+         ══════════════════════ */}
+      <section id="clubs-societies" className="py-20 bg-gray-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} className="text-center mb-12">
+            <SectionLabel text="Student Life" />
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Beyond the <span className="text-[#800E13]">Classroom</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Sports, leadership, faith and friendship — life at Bujuuko is as vibrant outside the classroom as within it.
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {[
+              { n: 32, label: 'Football',    span: 'row-span-2' },
+              { n: 33, label: 'Team Spirit', span: '' },
+              { n: 24, label: 'Leadership',  span: 'row-span-2' },
+              { n: 37, label: 'Brotherhood', span: '' },
+              { n: 36, label: 'Victory',     span: '' },
+              { n: 34, label: 'Camaraderie', span: '' },
+            ].map(({ n, label, span }, i) => (
+              <motion.a key={n} href="/gallery" initial={{ opacity:0, scale:0.95 }} whileInView={{ opacity:1, scale:1 }} transition={{ delay: i*0.06 }} viewport={{ once:true }}
+                className={`group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${span} ${span ? 'min-h-[320px]' : 'min-h-[150px]'}`}>
+                <img src={BUJ(n)} alt={label} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <span className="absolute bottom-3 left-4 text-white font-semibold text-sm tracking-wide">{label}</span>
+              </motion.a>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <a href="/gallery" className="inline-flex items-center gap-2 bg-[#800E13] text-white px-8 py-3.5 rounded-full font-semibold hover:bg-[#5C0A0F] transition shadow-lg">
+              Explore the Full Gallery <LuArrowRight className="w-4 h-4" />
             </a>
           </div>
         </div>
@@ -802,37 +817,6 @@ const SAKGHSKawaala: React.FC = () => {
         )}
       </AnimatePresence>
 
-      {/* ══════════════════════
-          VIDEO MODAL
-         ══════════════════════ */}
-      <AnimatePresence>
-        {isVideoOpen && (
-          <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            onClick={() => setIsVideoOpen(false)}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[200] p-4"
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl"
-            >
-              <button
-                onClick={() => setIsVideoOpen(false)}
-                className="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/80 transition text-xl font-light"
-              >
-                ×
-              </button>
-              <video
-                src="/GOMBE HIGH SCHOOL - KAWAALA/Home page/GHS-KAWAALA Virtual tour.mp4"
-                controls
-                autoPlay
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };

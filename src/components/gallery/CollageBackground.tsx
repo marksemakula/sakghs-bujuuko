@@ -1,18 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './CollageBackground.css';
 
-const images: string[] = [
-  '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_2101.JPG',
-  '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CO-CIRRICULAR ACTIVITIES/IMG_2451.JPG',
-  '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/DANCESPORT/_MG_6845.JPG',
-  '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/RELIGION/_MG_5502.JPG',
-  '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/TOURS/_MG_7489.JPG',
-  '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/UNIFORMS/WhatsApp Image 2026-04-17 at 7.21.17 PM.jpeg',
-  '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_9828.JPG',
-  '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/DANCESPORT/IMG_6935.JPG',
-  '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_9807.JPG',
-  '/GOMBE HIGH SCHOOL - KAWAALA/Students life/Gallery/CLASSES/IMG_2096.JPG',
-];
+const BUJ = (n: number) =>
+  `/St. Andrew Kaggwa Gombe High School - Bujuuko/St. Andrew Kaggwa Gombe High School - Bujuuko${n}.jpeg`;
+
+const images: string[] = [17, 20, 22, 23, 26, 28, 30, 32, 33, 36].map(BUJ);
 
 const FOREGROUND_COUNT = 3;
 

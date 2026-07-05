@@ -60,47 +60,29 @@ interface MediaItem {
   type: 'image' | 'video';
 }
 
-const BASE = '/GOMBE HIGH SCHOOL - KAWAALA';
+const BUJ = (n: number) =>
+  `/St. Andrew Kaggwa Gombe High School - Bujuuko/St. Andrew Kaggwa Gombe High School - Bujuuko${n}.jpeg`;
 
 const categories = [
   { id: 'all', label: 'All' },
-  { id: 'classes', label: 'Classes' },
-  { id: 'dancesport', label: 'Dancesport' },
-  { id: 'co-curricular', label: 'Co-Curricular' },
-  { id: 'tours', label: 'Tours' },
-  { id: 'religion', label: 'Religion' },
-  { id: 'uniforms', label: 'Uniforms' },
-  { id: 'administrators', label: 'Administrators' },
-  { id: 'campus', label: 'Campus' },
-  { id: 'videos', label: 'Videos' },
+  { id: 'leadership', label: 'Student Leadership' },
+  { id: 'academics', label: 'Academics' },
+  { id: 'ict', label: 'ICT & Innovation' },
+  { id: 'sports', label: 'Sports' },
+  { id: 'portraits', label: 'Portraits' },
 ];
 
 const mediaItems: MediaItem[] = [
-  /* Videos */
-  { src: `${BASE}/Home page/GHS-KAWAALA Virtual tour.mp4`, category: 'videos', type: 'video' },
-  /* Campus */
-  { src: `${BASE}/Home page/GOMBE HIGH SCHOOL.jpg`, category: 'campus', type: 'image' },
-  /* Administrators */
-  ...['IMG_2054','IMG_2055','IMG_2059','IMG_2062','IMG_2066','IMG_2068','IMG_2089','IMG_2150','IMG_2162','IMG_2165','IMG_2181']
-    .map(f => ({ src: `${BASE}/Home page/ADMINISTRATORS/${f}.JPG`, category: 'administrators', type: 'image' as const })),
-  /* Classes */
-  ...['IMG_1952','IMG_2096','IMG_2101','IMG_2113','IMG_2146','IMG_9712','IMG_9718','IMG_9777','IMG_9794','IMG_9807','IMG_9828','IMG_9876','IMG_9893','IMG_9899']
-    .map(f => ({ src: `${BASE}/Students life/Gallery/CLASSES/${f}.JPG`, category: 'classes', type: 'image' as const })),
-  /* Co-Curricular */
-  ...['IMG_2410','IMG_2439','IMG_2451','IMG_2455','IMG_2474','IMG_3496','IMG_3528']
-    .map(f => ({ src: `${BASE}/Students life/Gallery/CO-CIRRICULAR ACTIVITIES/${f}.JPG`, category: 'co-curricular', type: 'image' as const })),
-  /* Dancesport */
-  ...['IMG_6935','_MG_6778','_MG_6831','_MG_6845','_MG_6876','_MG_6888','_MG_6907','_MG_6923','_MG_6924']
-    .map(f => ({ src: `${BASE}/Students life/Gallery/DANCESPORT/${f}.JPG`, category: 'dancesport', type: 'image' as const })),
-  /* Religion */
-  ...['IMG_1944','_MG_5492','_MG_5502','_MG_5514']
-    .map(f => ({ src: `${BASE}/Students life/Gallery/RELIGION/${f}.JPG`, category: 'religion', type: 'image' as const })),
-  /* Tours */
-  ...['_MG_7409','_MG_7424','_MG_7433','_MG_7446','_MG_7450','_MG_7455','_MG_7457','_MG_7472','_MG_7479','_MG_7486','_MG_7489','_MG_7493']
-    .map(f => ({ src: `${BASE}/Students life/Gallery/TOURS/${f}.JPG`, category: 'tours', type: 'image' as const })),
-  /* Uniforms */
-  ...['WhatsApp Image 2026-04-17 at 7.21.17 PM','WhatsApp Image 2026-04-17 at 7.21.18 PM (1)','WhatsApp Image 2026-04-17 at 7.21.20 PM (1)','WhatsApp Image 2026-04-17 at 7.21.20 PM','WhatsApp Image 2026-04-17 at 7.21.21 PM','WhatsApp Image 2026-04-17 at 7.21.22 PM']
-    .map(f => ({ src: `${BASE}/Students life/Gallery/UNIFORMS/${f}.jpeg`, category: 'uniforms', type: 'image' as const })),
+  /* Student Leadership — prefects in blazers */
+  ...[17, 20, 22, 23, 19].map(n => ({ src: BUJ(n), category: 'leadership', type: 'image' as const })),
+  /* Academics — classroom study */
+  ...[28, 29, 30].map(n => ({ src: BUJ(n), category: 'academics', type: 'image' as const })),
+  /* ICT & Innovation — students on laptops */
+  ...[26, 31].map(n => ({ src: BUJ(n), category: 'ict', type: 'image' as const })),
+  /* Sports — football and team spirit */
+  ...[32, 33, 34, 36, 37].map(n => ({ src: BUJ(n), category: 'sports', type: 'image' as const })),
+  /* Portraits */
+  ...[18, 21, 24, 25, 27, 35].map(n => ({ src: BUJ(n), category: 'portraits', type: 'image' as const })),
 ];
 
 /* ── Header ── */
@@ -240,8 +222,6 @@ const Gallery: React.FC = () => {
 
   const filtered = activeCategory === 'all'
     ? mediaItems
-    : activeCategory === 'videos'
-    ? mediaItems.filter((m) => m.type === 'video')
     : mediaItems.filter((m) => m.category === activeCategory);
 
   return (
@@ -250,6 +230,8 @@ const Gallery: React.FC = () => {
 
       {/* ── Hero banner ── */}
       <div className="relative pt-24 pb-16 bg-gradient-to-r from-[#800E13] to-[#5C0A0F] overflow-hidden">
+        <img src={BUJ(33)} alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" loading="eager" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#800E13]/80 to-[#5C0A0F]/80" />
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent" />
         <div className="absolute inset-0 opacity-10"
           style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, #FFD700 0%, transparent 50%), radial-gradient(circle at 80% 20%, #FFD700 0%, transparent 40%)' }} />
@@ -266,11 +248,10 @@ const Gallery: React.FC = () => {
               Photo &amp; Video <span className="text-[#FFD700]">Gallery</span>
             </h1>
             <p className="text-white/70 text-lg max-w-2xl">
-              Explore moments that define the SAKGHS Kawaala experience — from classroom excellence to vibrant co-curricular life.
+              Explore moments that define the SAKGHS Bujuuko experience — from classroom excellence to vibrant co-curricular life.
             </p>
             <div className="flex items-center gap-6 mt-6 text-white/60 text-sm">
-              <span className="flex items-center gap-2"><LuImage className="w-4 h-4 text-[#FFD700]" />{mediaItems.filter(m => m.type === 'image').length} Photos</span>
-              <span className="flex items-center gap-2"><LuPlay className="w-4 h-4 text-[#FFD700]" />{mediaItems.filter(m => m.type === 'video').length} Video{mediaItems.filter(m => m.type === 'video').length !== 1 ? 's' : ''}</span>
+              <span className="flex items-center gap-2"><LuImage className="w-4 h-4 text-[#FFD700]" />{mediaItems.length} Photos</span>
             </div>
           </motion.div>
         </div>
@@ -377,7 +358,7 @@ const Gallery: React.FC = () => {
               <img src="/images/Gombe High logo.png" alt="SAKGHS" className="h-20 w-auto mb-4 grayscale brightness-150" loading="lazy" />
               <h3 className="text-base font-bold text-white mb-2">St. Andrew Kaggwa Gombe High School</h3>
               <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-                Established in 2016, St. Andrew Kaggwa Gombe High School Kawaala is a mixed day and boarding
+                Established in 2016, St. Andrew Kaggwa Gombe High School Bujuuko is a mixed day and boarding
                 secondary school committed to academic excellence, character formation, and holistic development,
                 guided by the motto: "Light the Lamp of Wisdom."
               </p>
@@ -400,10 +381,8 @@ const Gallery: React.FC = () => {
             <div>
               <h3 className="text-base font-bold mb-4 text-white">Contact Us</h3>
               <ul className="space-y-3">
-                <li className="flex items-start gap-3"><LuMapPin className="w-4 h-4 text-[#FFD700] shrink-0 mt-0.5" /><span className="text-gray-400 text-sm">Kasubi, Kawaala, Hoima Road, Kampala</span></li>
-                <li className="flex items-center gap-3"><LuPhone className="w-4 h-4 text-[#FFD700] shrink-0" /><a href="tel:+256708700001" className="text-gray-400 text-sm hover:text-[#FFD700] transition-colors">0708 700 001</a></li>
-                <li className="flex items-center gap-3"><LuPhone className="w-4 h-4 text-[#FFD700] shrink-0" /><a href="tel:+256708700002" className="text-gray-400 text-sm hover:text-[#FFD700] transition-colors">0708 700 002</a></li>
-                <li className="flex items-center gap-3"><LuPhone className="w-4 h-4 text-[#FFD700] shrink-0" /><a href="tel:+256708700009" className="text-gray-400 text-sm hover:text-[#FFD700] transition-colors">0708 700 009</a></li>
+                <li className="flex items-start gap-3"><LuMapPin className="w-4 h-4 text-[#FFD700] shrink-0 mt-0.5" /><span className="text-gray-400 text-sm">Bujuuko, Mityana Road, Mpigi District</span></li>
+                <li className="flex items-center gap-3"><LuPhone className="w-4 h-4 text-[#FFD700] shrink-0" /><a href="tel:+256709882700" className="text-gray-400 text-sm hover:text-[#FFD700] transition-colors">0709 882 700</a></li>
                 <li className="flex items-center gap-3"><LuMail className="w-4 h-4 text-[#FFD700] shrink-0" /><a href="mailto:info@gombehighschool.ac.ug" className="text-gray-400 text-sm hover:text-[#FFD700] transition-colors">info@gombehighschool.ac.ug</a></li>
               </ul>
             </div>

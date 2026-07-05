@@ -238,6 +238,8 @@ const UnebResults: React.FC = () => {
 
       {/* ── Hero banner ── */}
       <div className="relative pt-24 pb-16 bg-gradient-to-r from-[#800E13] to-[#5C0A0F] overflow-hidden">
+        <img src="/St. Andrew Kaggwa Gombe High School - Bujuuko/St. Andrew Kaggwa Gombe High School - Bujuuko36.jpeg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" loading="eager" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#800E13]/80 to-[#5C0A0F]/80" />
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent" />
         <div className="absolute inset-0 opacity-10"
           style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, #FFD700 0%, transparent 50%), radial-gradient(circle at 80% 20%, #FFD700 0%, transparent 40%)' }} />
@@ -263,9 +265,9 @@ const UnebResults: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'UCE 2024 Results', image: '/GOMBE HIGH SCHOOL - KAWAALA/Academics/UCE 2024.jpg' },
-              { title: 'UCE 2025 Results', image: '/GOMBE HIGH SCHOOL - KAWAALA/Academics/UCE 2025.jpg' },
-              { title: 'UACE 2025 Results', image: '/GOMBE HIGH SCHOOL - KAWAALA/Academics/UACE 2025.jpg' },
+              { title: 'UCE 2024 Results', image: '/St. Andrew Kaggwa Gombe High School - Bujuuko/St. Andrew Kaggwa Gombe High School - Bujuuko33.jpeg' },
+              { title: 'UCE 2025 Results', image: '/St. Andrew Kaggwa Gombe High School - Bujuuko/St. Andrew Kaggwa Gombe High School - Bujuuko36.jpeg' },
+              { title: 'UACE 2025 Results', image: '/St. Andrew Kaggwa Gombe High School - Bujuuko/St. Andrew Kaggwa Gombe High School - Bujuuko37.jpeg' },
             ].map((result, index) => (
               <motion.div key={result.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}
                 className="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">

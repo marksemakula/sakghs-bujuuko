@@ -358,7 +358,7 @@ const SAKGHSKawaala: React.FC = () => {
          ══════════════════════ */}
       <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={BUJ(23)} alt="SAKGHS Bujuuko student leaders" className="w-full h-full object-cover" loading="eager" />
+          <img src="/St. Andrew Kaggwa Gombe High School - Bujuuko/St. Andrew Kaggwa Gombe High School - Bujuuko23.png" alt="SAKGHS Bujuuko student leaders" className="w-full h-full object-cover" loading="eager" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/20" />
         </div>
         {/* Diagonal accent */}
@@ -559,15 +559,11 @@ const SAKGHSKawaala: React.FC = () => {
 
             <motion.div initial={{ opacity:0, x:50 }} whileInView={{ opacity:1, x:0 }} viewport={{ once:true }} className="relative">
               <div className="relative">
-                <img src={BUJ(22)} alt="Students with their teacher"
+                <img src="/IMG_1952.JPG" alt="Students studying"
                   className="rounded-2xl shadow-2xl w-full object-cover object-top" style={{ maxHeight: 460 }} loading="lazy" />
                 <img src={BUJ(27)} alt="Student on campus"
                   className="hidden md:block absolute -top-8 -right-6 w-40 h-52 object-cover rounded-2xl border-4 border-white shadow-2xl rotate-3" loading="lazy" />
-                <div className="absolute -bottom-6 -left-6 bg-[#800E13] text-white p-8 rounded-2xl shadow-2xl">
-                  <div className="text-5xl font-bold mb-1" style={{ color: PRIMARY }}>9+</div>
-                  <div className="text-base font-semibold">Years of Excellence</div>
-                  <div className="text-sm text-white/70">Established 2016</div>
-                </div>
+
               </div>
             </motion.div>
           </div>

@@ -577,9 +577,6 @@ const SAKGHSKawaala: React.FC = () => {
           <motion.div initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} className="text-center mb-14">
             <SectionLabel text="Partners & Affiliates" />
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Proudly Associated With</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Working with government, industry and community to deliver the best for our students.
-            </p>
           </motion.div>
           <div className="relative overflow-hidden">
             <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent" />

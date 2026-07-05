@@ -339,9 +339,7 @@ const UnebResults: React.FC = () => {
               <img src="/images/Gombe High logo.png" alt="SAKGHS" className="h-40 w-auto mb-4" loading="lazy" />
               <h3 className="text-base font-bold text-white mb-2">St. Andrew Kaggwa Gombe High School</h3>
               <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-                Established in 2022, St. Andrew Kaggwa Gombe High School Bujuuko is a mixed day and boarding
-                secondary school committed to academic excellence, character formation, and holistic development,
-                guided by the motto: "Light the Lamp of Wisdom."
+                Light the Lamp of Wisdom.
               </p>
               <div className="flex items-center gap-3">
                 {[

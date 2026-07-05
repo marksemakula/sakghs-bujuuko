@@ -398,17 +398,16 @@ const SAKGHSKawaala: React.FC = () => {
               <div className="relative">
                 {/* Back card */}
                 <img src={BUJ(20)} alt="SAKGHS student leaders" loading="eager"
-                  className="absolute -top-6 -right-8 w-56 h-72 object-cover rounded-3xl border-2 border-white/20 shadow-2xl rotate-6 opacity-80" />
+                  className="absolute -top-6 -right-8 w-56 h-72 object-cover rounded-3xl border-2 border-white shadow-2xl rotate-6 opacity-80" />
                 {/* Front card */}
                 <img src={BUJ(17)} alt="SAKGHS head prefect" loading="eager"
-                  className="relative w-72 h-96 object-cover rounded-3xl border-4 border-[#FFD700]/60 shadow-2xl -rotate-2" />
+                  className="relative w-72 h-96 object-cover rounded-3xl border-4 border-white shadow-2xl -rotate-2" />
                 {/* Logo badge */}
                 <div className="absolute -bottom-12 -left-16 h-72 w-72 rounded-full bg-white shadow-2xl border-4 border-[#FFD700] flex items-center justify-center p-6">
                   <img src="/images/Gombe High logo.png" alt="SAKGHS Logo" className="h-full w-full object-contain" />
                 </div>
               </div>
-              <div className="flex items-center space-x-2 mt-4">
-                <LuGraduationCap className="w-7 h-7 text-[#FFD700]" />
+              <div className="mt-4 text-center">
                 <span className="text-[#FFD700] font-bold tracking-wider uppercase text-sm">Light the Lamp of Wisdom · Since 2022</span>
               </div>
             </motion.div>
@@ -488,10 +487,10 @@ const SAKGHSKawaala: React.FC = () => {
                 const img = prog.images[(programImages[pi] ?? 0) % prog.images.length];
                 return (
                   <motion.div key={prog.id} layout initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} exit={{ opacity:0, y:-10 }} transition={{ delay: index * 0.07 }}
-                    className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col">
+                    className="group bg-white rounded-none overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col">
                     <div className="relative h-44 overflow-hidden">
                       <img src={img} alt={prog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                      <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-white/90 flex items-center justify-center shadow-lg">
+                      <div className="absolute top-4 left-4 w-12 h-12 rounded-none bg-white/90 flex items-center justify-center shadow-lg">
                         <prog.icon className="w-6 h-6 text-[#800E13]" />
                       </div>
                     </div>
@@ -706,9 +705,7 @@ const SAKGHSKawaala: React.FC = () => {
               <img src="/images/Gombe High logo.png" alt="SAKGHS" className="h-40 w-auto mb-4" loading="lazy" />
               <h3 className="text-base font-bold text-white mb-2">St. Andrew Kaggwa Gombe High School</h3>
               <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-                Established in 2022, St. Andrew Kaggwa Gombe High School Bujuuko is a mixed day and boarding
-                secondary school committed to academic excellence, character formation, and holistic development,
-                guided by the motto: "Light the Lamp of Wisdom."
+                Light the Lamp of Wisdom.
               </p>
               <div className="flex items-center gap-3">
                 {[

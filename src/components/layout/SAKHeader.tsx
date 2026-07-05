@@ -101,7 +101,7 @@ const SAKHeader: React.FC = () => {
                 St. Andrew Kaggwa Gombe HS
               </div>
               <div className="text-[10px] lg:text-xs font-semibold tracking-widest uppercase" style={{ color: PRIMARY }}>
-                Excellence &amp; Character
+                Light the Lamp of Wisdom
               </div>
             </div>
           </Link>

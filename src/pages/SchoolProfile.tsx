@@ -6,7 +6,7 @@ import {
   LuBookOpen, LuMicroscope, LuUsers, LuAward,
   LuTarget, LuHeart, LuShield, LuMusic,
 } from 'react-icons/lu';
-import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaYoutube, FaTiktok } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
 /* ─────────────────────────────
@@ -105,7 +105,7 @@ const PageHeader: React.FC = () => {
               </div>
               <div className={`text-xs font-semibold tracking-wider transition-colors ${scrolled ? 'text-[#800E13]' : 'text-[#FFD700]'}`}
                 style={{ color: scrolled ? SECONDARY : PRIMARY }}>
-                EXCELLENCE &amp; CHARACTER · SINCE 2016
+                LIGHT THE LAMP OF WISDOM · SINCE 2022
               </div>
             </div>
           </a>
@@ -267,7 +267,7 @@ const SchoolProfile: React.FC = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
               School <span className="text-[#FFD700]">Profile</span>
             </h1>
-            <p className="text-white/70 text-lg">St. Andrew Kaggwa Gombe High School, Kawaala · Established June 2016</p>
+            <p className="text-white/70 text-lg">St. Andrew Kaggwa Gombe High School, Bujuuko · Established June 2022</p>
           </motion.div>
         </div>
       </div>
@@ -277,7 +277,7 @@ const SchoolProfile: React.FC = () => {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#800E13]/20">
             {[
-              { label: 'Founded',    value: 'June 2016' },
+              { label: 'Founded',    value: 'June 2022' },
               { label: 'Reg. No.',   value: 'Pss/s/141' },
               { label: 'Type',       value: 'Day & Boarding' },
               { label: 'Motto',      value: '"Light the Lamp of Wisdom"' },
@@ -305,7 +305,7 @@ const SchoolProfile: React.FC = () => {
             </div>
             <div className="relative space-y-5 text-gray-700 leading-relaxed">
               <p className="text-lg">
-                Established in June 2016, <strong>St. Andrew Kaggwa Gombe High School Kawaala</strong> (Reg.&nbsp;No.&nbsp;Pss/s/141)
+                Established in June 2022, <strong>St. Andrew Kaggwa Gombe High School Bujuuko</strong> (Reg.&nbsp;No.&nbsp;Pss/s/141)
                 has steadily grown into a vibrant centre of learning committed to academic excellence, character formation,
                 and innovation. The school is a mixed day and boarding secondary school that provides a supportive and inclusive
                 environment where learners are empowered to discover their potential and pursue their aspirations.
@@ -336,7 +336,7 @@ const SchoolProfile: React.FC = () => {
                 mathematics, arts, and vocational skills to ensure the development of well-rounded individuals.
               </p>
               <p>
-                At St. Andrew Kaggwa Gombe High School Kawaala, education goes beyond the classroom. The school promotes
+                At St. Andrew Kaggwa Gombe High School Bujuuko, education goes beyond the classroom. The school promotes
                 holistic development through co-curricular activities including sports, music, drama, debate, and clubs;
                 leadership and mentorship programmes; community engagement and service learning; spiritual and moral
                 guidance; and life skills and career guidance programmes. These opportunities help learners build confidence,
@@ -349,7 +349,7 @@ const SchoolProfile: React.FC = () => {
                 diet with nutritious meals every day.
               </p>
               <p>
-                With nine years of dedicated service, St. Andrew Kaggwa Gombe High School Kawaala continues to grow as a
+                With four years of dedicated service, St. Andrew Kaggwa Gombe High School Bujuuko continues to grow as a
                 centre of excellence committed to nurturing enlightened minds in line with its motto:{' '}
                 <em className="font-semibold text-[#800E13]">"Light the Lamp of Wisdom."</em>
               </p>
@@ -431,7 +431,7 @@ const SchoolProfile: React.FC = () => {
           </motion.div>
           <div className="grid sm:grid-cols-3 gap-6 text-center">
             {[
-              { icon: LuMapPin, label: 'Address',  value: 'Kasubi, Kawaala, Hoima Road, Kampala' },
+              { icon: LuMapPin, label: 'Address',  value: 'Bujuuko, Mityana Road, Mpigi District' },
               { icon: LuPhone,  label: 'Phone',    value: '+256 708 700 001\n+256 708 700 006/2' },
               { icon: LuMail,   label: 'Email',    value: 'info@gombehighschool.ac.ug' },
             ].map(({ icon: Icon, label, value }) => (
@@ -461,17 +461,23 @@ const SchoolProfile: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between gap-8 mb-8">
             <div className="max-w-sm">
-              <img src="/images/Gombe High logo.png" alt="SAKGHS" className="h-16 w-auto mb-3 grayscale brightness-150" loading="lazy" />
+              <img src="/images/Gombe High logo.png" alt="SAKGHS" className="h-32 w-auto mb-3" loading="lazy" />
               <h3 className="text-base font-bold text-white mb-2">St. Andrew Kaggwa Gombe High School</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Established in June 2016, St. Andrew Kaggwa Gombe High School Kawaala is a mixed day and boarding
+                Established in June 2022, St. Andrew Kaggwa Gombe High School Bujuuko is a mixed day and boarding
                 secondary school committed to academic excellence, character formation, and holistic development,
                 guided by the motto: "Light the Lamp of Wisdom."
               </p>
               <div className="flex items-center gap-3 mt-4">
-                {([FaFacebook, FaXTwitter, FaInstagram, FaLinkedin, FaWhatsapp] as React.ElementType[]).map((Icon, i) => (
-                  <a key={i} href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FFD700]/20 hover:text-[#FFD700] transition-colors text-gray-300">
-                    <Icon className="w-4 h-4" />
+                {[
+                  { icon: FaFacebook, href: "https://www.facebook.com/share/1KtMX5AvjT/", label: "Facebook" },
+                  { icon: FaXTwitter, href: "https://x.com/gombehighschool", label: "X" },
+                  { icon: FaInstagram, href: "https://www.instagram.com/st.andrewkaggwagombehighschool?igsh=MW56MjRyMGtrdHRncQ==", label: "Instagram" },
+                  { icon: FaYoutube, href: "https://www.youtube.com/@watchgombess", label: "YouTube" },
+                  { icon: FaTiktok, href: "https://www.tiktok.com/@gombehighschoolkawaala?_r=1&_t=ZS-97XNihHM2hL", label: "TikTok" }
+                ].map((social) => (
+                  <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FFD700]/20 hover:text-[#FFD700] transition-colors text-gray-300" aria-label={social.label}>
+                    <social.icon className="w-4 h-4" />
                   </a>
                 ))}
               </div>
@@ -487,7 +493,7 @@ const SchoolProfile: React.FC = () => {
             <div>
               <h3 className="text-base font-bold mb-4 text-white">Contact</h3>
               <ul className="space-y-2">
-                <li className="flex items-start gap-2 text-gray-400 text-sm"><LuMapPin className="w-4 h-4 text-[#FFD700] shrink-0 mt-0.5" />Kasubi, Kawaala, Hoima Road, Kampala</li>
+                <li className="flex items-start gap-2 text-gray-400 text-sm"><LuMapPin className="w-4 h-4 text-[#FFD700] shrink-0 mt-0.5" />Bujuuko, Mityana Road, Mpigi District</li>
                 <li className="flex items-center gap-2 text-gray-400 text-sm"><LuPhone className="w-4 h-4 text-[#FFD700] shrink-0" /><a href="tel:+256708700001" className="hover:text-[#FFD700] transition-colors">+256 708 700 001</a></li>
                 <li className="flex items-center gap-2 text-gray-400 text-sm"><LuPhone className="w-4 h-4 text-[#FFD700] shrink-0" /><a href="tel:+256708700006" className="hover:text-[#FFD700] transition-colors">+256 708 700 006/2</a></li>
                 <li className="flex items-center gap-2 text-gray-400 text-sm"><LuMail className="w-4 h-4 text-[#FFD700] shrink-0" /><a href="mailto:info@gombehighschool.ac.ug" className="hover:text-[#FFD700] transition-colors">info@gombehighschool.ac.ug</a></li>

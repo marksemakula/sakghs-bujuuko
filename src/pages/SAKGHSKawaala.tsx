@@ -5,7 +5,7 @@ import {
   LuCalendar, LuMapPin, LuPhone, LuMail, LuMenu, LuX, LuChevronDown,
   LuPlay, LuMicroscope, LuPalette, LuCpu, LuBriefcase,
 } from 'react-icons/lu';
-import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaYoutube, FaTiktok } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
 /* ─────────────────────────────
@@ -184,7 +184,7 @@ const InlineHeader: React.FC<{ onApply: () => void }> = ({ onApply }) => {
                 St. Andrew Kaggwa Gombe HS
               </div>
               <div className={`text-xs font-semibold tracking-wider transition-colors ${scrolled ? 'text-[#800E13]' : 'text-[#FFD700]'}`}>
-                EXCELLENCE &amp; CHARACTER · SINCE 2016
+                LIGHT THE LAMP OF WISDOM · SINCE 2022
               </div>
             </div>
           </a>
@@ -409,7 +409,7 @@ const SAKGHSKawaala: React.FC = () => {
               </div>
               <div className="flex items-center space-x-2 mt-4">
                 <LuGraduationCap className="w-7 h-7 text-[#FFD700]" />
-                <span className="text-[#FFD700] font-bold tracking-wider uppercase text-sm">Excellence &amp; Character · Since 2016</span>
+                <span className="text-[#FFD700] font-bold tracking-wider uppercase text-sm">Light the Lamp of Wisdom · Since 2022</span>
               </div>
             </motion.div>
           </div>
@@ -533,7 +533,7 @@ const SAKGHSKawaala: React.FC = () => {
                 Shaping Lives,<span className="text-[#800E13]"> Building Leaders</span>
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Established in June 2016 under the Gombe Education Service umbrella, St. Andrew Kaggwa Gombe
+                Established in 2022 under the Gombe Education Service umbrella, St. Andrew Kaggwa Gombe
                 High School – Bujuuko (Reg. No. Pss/s/141) is a vibrant mixed day and boarding secondary
                 school. Committed to academic excellence, character formation, and innovation, we empower
                 every learner to discover their potential and pursue their aspirations.
@@ -703,17 +703,23 @@ const SAKGHSKawaala: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">
-              <img src="/images/Gombe High logo.png" alt="SAKGHS" className="h-20 w-auto mb-4 grayscale brightness-150" loading="lazy" />
+              <img src="/images/Gombe High logo.png" alt="SAKGHS" className="h-40 w-auto mb-4" loading="lazy" />
               <h3 className="text-base font-bold text-white mb-2">St. Andrew Kaggwa Gombe High School</h3>
               <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-                Established in 2016, St. Andrew Kaggwa Gombe High School Bujuuko is a mixed day and boarding
+                Established in 2022, St. Andrew Kaggwa Gombe High School Bujuuko is a mixed day and boarding
                 secondary school committed to academic excellence, character formation, and holistic development,
                 guided by the motto: "Light the Lamp of Wisdom."
               </p>
               <div className="flex items-center gap-3">
-                {([FaFacebook, FaXTwitter, FaInstagram, FaLinkedin, FaWhatsapp] as React.ElementType[]).map((Icon, i) => (
-                  <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FFD700]/20 hover:text-[#FFD700] transition-colors text-gray-300">
-                    <Icon className="w-4 h-4" />
+                {[
+                  { icon: FaFacebook, href: "https://www.facebook.com/share/1KtMX5AvjT/", label: "Facebook" },
+                  { icon: FaXTwitter, href: "https://x.com/gombehighschool", label: "X" },
+                  { icon: FaInstagram, href: "https://www.instagram.com/st.andrewkaggwagombehighschool?igsh=MW56MjRyMGtrdHRncQ==", label: "Instagram" },
+                  { icon: FaYoutube, href: "https://www.youtube.com/@watchgombess", label: "YouTube" },
+                  { icon: FaTiktok, href: "https://www.tiktok.com/@gombehighschoolkawaala?_r=1&_t=ZS-97XNihHM2hL", label: "TikTok" }
+                ].map((social) => (
+                  <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FFD700]/20 hover:text-[#FFD700] transition-colors text-gray-300" aria-label={social.label}>
+                    <social.icon className="w-4 h-4" />
                   </a>
                 ))}
               </div>

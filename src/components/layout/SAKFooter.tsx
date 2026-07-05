@@ -2,7 +2,8 @@ import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { LuMail, LuPhone, LuMapPin } from 'react-icons/lu';
-import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaTiktok } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const PRIMARY = '#FFD700';
 const SECONDARY = '#800E13';
@@ -20,10 +21,11 @@ const campusesData: Campus[] = [
 ];
 
 const socialIcons = [
-  { Icon: FaFacebook, href: '#', label: 'Facebook' },
-  { Icon: FaTwitter, href: '#', label: 'Twitter' },
-  { Icon: FaInstagram, href: '#', label: 'Instagram' },
-  { Icon: FaLinkedin, href: '#', label: 'LinkedIn' },
+  { Icon: FaFacebook, href: 'https://www.facebook.com/share/1KtMX5AvjT/', label: 'Facebook' },
+  { Icon: FaXTwitter, href: 'https://x.com/gombehighschool', label: 'X (Twitter)' },
+  { Icon: FaInstagram, href: 'https://www.instagram.com/st.andrewkaggwagombehighschool?igsh=MW56MjRyMGtrdHRncQ==', label: 'Instagram' },
+  { Icon: FaYoutube, href: 'https://www.youtube.com/@watchgombess', label: 'YouTube' },
+  { Icon: FaTiktok, href: 'https://www.tiktok.com/@gombehighschoolkawaala?_r=1&_t=ZS-97XNihHM2hL', label: 'TikTok' },
 ];
 
 const SAKFooter: React.FC = React.memo(() => {
@@ -36,20 +38,20 @@ const SAKFooter: React.FC = React.memo(() => {
           {/* Brand column */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="h-20 w-20 flex items-center justify-center overflow-hidden rounded-full border border-white/20">
+              <div className="h-40 w-40 flex items-center justify-center overflow-hidden rounded-full border border-white/20">
                 <img
                   src="/images/Gombe High logo.png"
                   alt="St. Andrew Kaggwa Gombe HS"
-                  className="h-full w-full object-contain grayscale"
+                  className="h-full w-full object-contain"
                   loading="lazy"
-                  width={80}
-                  height={80}
+                  width={160}
+                  height={160}
                 />
               </div>
               <div className="leading-tight">
                 <div className="text-base font-bold">St. Andrew Kaggwa</div>
                 <div className="text-sm font-semibold">Gombe High School</div>
-                <div className="text-xs font-semibold mt-0.5" style={{ color: PRIMARY }}>Excellence &amp; Character</div>
+                <div className="text-xs font-semibold mt-0.5" style={{ color: PRIMARY }}>Light the Lamp of Wisdom</div>
               </div>
             </div>
             <p className="text-sm text-white/75 leading-relaxed">

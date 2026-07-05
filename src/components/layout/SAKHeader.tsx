@@ -50,7 +50,7 @@ const navItems: NavItem[] = [
   {
     label: 'Student Life',
     items: [
-      { label: 'Articles', href: '#articles' },
+      { label: 'Updates', href: '#articles' },
       { label: 'Images', href: '#images' },
       { label: 'Student Clubs and Societies', href: '#clubs-societies' },
     ],

@@ -46,7 +46,7 @@ const navItems = [
   {
     label: 'Student Life',
     items: [
-      { label: 'Articles', href: '/#articles' },
+      { label: 'Updates', href: '/#articles' },
       { label: 'Images', href: '/gallery' },
       { label: 'Student Clubs and Societies', href: '/#clubs-societies' },
     ],

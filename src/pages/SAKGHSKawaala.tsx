@@ -64,7 +64,7 @@ const navItems: NavItem[] = [
   {
     label: 'Student Life',
     items: [
-      { label: 'Articles',                    href: '#articles' },
+      { label: 'Updates',                     href: '#articles' },
       { label: 'Images',                      href: '/gallery' },
       { label: 'Student Clubs and Societies', href: '#clubs-societies' },
     ],
@@ -672,6 +672,88 @@ const SAKGHSKawaala: React.FC = () => {
             <a href="/gallery" className="inline-flex items-center gap-2 bg-[#800E13] text-white px-8 py-3.5 rounded-full font-semibold hover:bg-[#5C0A0F] transition shadow-lg">
               Explore the Full Gallery <LuArrowRight className="w-4 h-4" />
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════
+          NEWS & ARTICLES
+         ══════════════════════ */}
+      <section id="articles" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <SectionLabel text="Updates" />
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              News and <span className="text-[#800E13]">featured Articles</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Stay up to date with the latest developments, student highlights, and academic milestones from our Bujuuko campus.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Bujuuko Campus Welcomes New Students for 2026 Intake",
+                excerpt: "We are thrilled to welcome our new cohort of learners to our state-of-the-art campus on Mityana Road.",
+                date: "Jan 5, 2026",
+                category: "Campus Life",
+                image: BUJ(29),
+              },
+              {
+                title: "Outstanding Performance in UNEB Examinations",
+                excerpt: "Our students continue to shine, registering excellent results in both UCE and UACE national examinations.",
+                date: "Dec 18, 2025",
+                category: "Academics",
+                image: BUJ(28),
+              },
+              {
+                title: "Empowering Future Leaders Through Practical Skills",
+                excerpt: "Hands-on training in Technical Drawing, Agriculture, and Entrepreneurship equips students with key life competencies.",
+                date: "Nov 22, 2025",
+                category: "Vocational",
+                image: BUJ(26),
+              },
+            ].map((art, idx) => (
+              <motion.article
+                key={art.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 flex flex-col"
+              >
+                <div className="h-48 relative overflow-hidden bg-gray-100">
+                  <img src={art.image} alt={art.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <span className="absolute top-4 left-4 bg-[#800E13] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                    {art.category}
+                  </span>
+                </div>
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-2 text-gray-400 text-xs font-medium mb-3">
+                      <LuCalendar className="w-4 h-4 text-[#FFD700]" />
+                      <span>{art.date}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 hover:text-[#800E13] transition-colors line-clamp-2">
+                      {art.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">
+                      {art.excerpt}
+                    </p>
+                  </div>
+                  <button className="inline-flex items-center gap-2 text-[#800E13] font-bold text-sm hover:text-[#5C0A0F] group self-start">
+                    Read Full Article
+                    <LuArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </motion.article>
+            ))}
           </div>
         </div>
       </section>

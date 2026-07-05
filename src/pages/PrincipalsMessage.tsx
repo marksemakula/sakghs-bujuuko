@@ -263,87 +263,59 @@ const PrincipalsMessage: React.FC = () => {
           </div>
 
           <div className="relative">
-            <p className="text-lg text-gray-700 font-semibold mb-6">Dear Parents, Students and Visitors,</p>
+            <p className="text-xl text-gray-700 font-bold mb-6">Principal’s welcome message</p>
 
             <div className="space-y-5 text-gray-600 leading-relaxed">
-              <p>
-                It is my honour and privilege to welcome you to St. Andrew Kaggwa Gombe High School Bujuuko.
-                Whether you are a prospective student, a caring parent, or a visitor to our school, I am
-                delighted to share what makes our institution truly exceptional.
+              <p className="font-semibold text-gray-700 text-lg">
+                Welcome to St. Andrew Kaggwa Gombe High School – Bujuuko, where excellence begins with
+                character and every learner is prepared to make a positive difference in the world.
               </p>
               <p>
-                At Gombe High School, we are passionately dedicated to offering both academic excellence and
-                holistic education. We are fully aware that the times have changed, and that parents today
-                want their children to become resourceful, industrious and adaptable to the demands of a
-                rapidly evolving world. It is therefore our unwavering commitment to provide quality, holistic
-                education and civilisation without any reservation.
+                It is my great pleasure to welcome you to our school community. At St. Andrew Kaggwa Gombe
+                High School, we believe that true education goes beyond academic success. We are a holistic
+                institution committed to nurturing disciplined, knowledgeable, spiritually grounded, and
+                responsible young men and women who are ready to lead with integrity and serve society with
+                compassion.
               </p>
               <p>
-                Everything we do is guided by our six core values:{' '}
-                <span className="font-semibold text-[#800E13]">
-                  God-fearing, Respect, Integrity, Teamwork, Excellence, and Time Management
-                </span>
-                . These values are not merely words on a wall — they are lived out daily by our students and
-                staff, and they form the foundation of every decision we make as a school community.
+                Our school is a <strong>home away from home</strong>, where every learner is valued, guided, and inspired to
+                discover and develop their God-given potential. Supported by a caring management team,
+                dedicated teachers, and committed support staff, we provide an environment that promotes
+                academic excellence, moral uprightness, innovation, leadership, and respect for others.
               </p>
               <p>
-                Our curriculum is learner-centred and practical. Subjects such as Fine Art, Entrepreneurship,
-                Technical Drawing, Food and Nutrition, and Agriculture are taught through hands-on experience.
-                Students start their own companies and clubs, earning as they learn. They produce arts and
-                crafts which are exported to India and East Africa, thereby developing the life skills
-                necessary for self-sustenance and enterprise.
+                Discipline is not merely a rule at Gombe, it is our culture. It is the strong foundation upon which
+                we build confident, responsible, and successful future leaders. We take pride in shaping individuals
+                whose character will speak for them wherever life takes them.
               </p>
               <p>
-                ICT is central to how we teach and learn. The school is equipped with smart boards,
-                projectors, computers, full-time Wi-Fi, and an online library that enables effective research
-                in line with the national curriculum. This integration of technology into teaching and
-                learning, driven by our competent and passionate staff, is a key reason for our consistently
-                strong academic results.
+                To parents, thank you for considering us as partners in your child's future. To prospective learners,
+                we warmly welcome you to a place where dreams are nurtured, talents are discovered, and
+                greatness is cultivated. To our alumni, well-wishers, and development partners, we invite you to
+                join us in advancing our shared vision of transforming lives through quality education.
               </p>
               <p>
-                Our science laboratories are unmatched, with a student-to-apparatus ratio of 1:1. Practical
-                work begins from Senior One, ensuring that students are acquainted with the laboratory
-                environment early in their academic journey.
+                At St. Andrew Kaggwa Gombe High School, every child matters, every dream is valued, and every
+                success is celebrated. We remain committed to providing an educational experience that parents
+                can trust with confidence, knowing that choosing Gombe is an investment they will never regret.
               </p>
               <p>
-                Beyond academics, the school offers a rich range of sports and co-curricular activities,
-                including football, netball, basketball and Dance sport. Students are also trained in music,
-                learning to play instruments such as brass band, saxophone, jazz, drums, piano, guitar and
-                flute. We believe that a well-rounded education nurtures the whole person.
+                I invite you to explore our website and discover the opportunities, achievements, and vibrant
+                community that make our school truly exceptional. We look forward to welcoming you into the
+                Gombe family.
               </p>
-              <p>
-                We are a multi-religious school. We have dedicated places of worship on the school premises,
-                and every religion is accorded due respect. We celebrate our diversity and regard it as a
-                strength.
-              </p>
-              <p>
-                The safety and wellbeing of our students is a matter we take very seriously. CCTV cameras
-                are installed across the school premises to support discipline and security. We conduct
-                termly fire drills and maintain fire extinguishers throughout the school. Our counselling
-                and guidance department, supported by trained peer counsellors, ensures that every student
-                has access to the support they need to thrive both academically and personally.
-              </p>
-              <p>
-                Our students are housed in well-maintained and comfortable dormitories, and are treated to
-                nutritious, well-balanced meals every day. We believe that a healthy, rested student is a
-                learning student.
-              </p>
-              <p>
-                I warmly invite you to join the Gombe High School family. Come and experience for yourself
-                why St. Andrew Kaggwa Gombe High School is the place to be — a school that offers academic
-                excellence, world-class facilities, and both local and international exposure. This is the
-                school that puts your worries to rest and sets your child on the path to a truly excellent
-                future.
+              <p className="text-center font-bold text-[#800E13] text-lg italic mt-8">
+                “Where character is built, Excellence is pursued, and future leaders are made.”
               </p>
             </div>
 
             {/* Signature */}
             <div className="mt-10 flex flex-wrap items-center gap-6 border-t border-[#FFD700]/40 pt-8">
               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#800E13] to-[#5C0A0F] flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
-                LN
+                KM
               </div>
               <div>
-                <p className="text-xl font-bold text-gray-900">Lillian Nanyonjo</p>
+                <p className="text-xl font-bold text-gray-900">Kailigi Simon Mukambwe</p>
                 <p className="text-[#800E13] font-semibold">Principal</p>
                 <p className="text-gray-500 text-sm">St. Andrew Kaggwa Gombe High School, Bujuuko</p>
               </div>

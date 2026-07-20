@@ -342,7 +342,7 @@ const ManagementCommittee: React.FC = () => {
             </div>
           </div>
           <div className="pt-4 text-center">
-            <p className="text-gray-400 text-sm">© {new Date().getFullYear()} St. Andrew Kaggwa Gombe High School. All rights reserved.</p>
+            <p className="text-gray-400 text-sm">© {new Date().getFullYear()} St. Andrew Kaggwa Gombe High School. All rights reserved. A member of <a href="https://ges.ac.ug" target="_blank" rel="noopener" className="hover:underline">Gombe Education Service</a>.</p>
           </div>
         </div>
       </footer>
